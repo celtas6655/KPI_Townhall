@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <link rel="stylesheet" type="text/css" href="style.css">
+    <meta charset="UTF-8" name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="stylesheet" href="https://www.w3schools.com/w3css/4/w3.css">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="stylesheet" href="https://www.w3schools.com/w3css/4/w3.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+    <script type="text/javascript" src="scripts.js"></script>
+
+    <title>KPI Townhall</title>
+    <link rel="icon" type="img" href="favicon.ico"/>
+</head>
+<body>
+
+<!-- Sidebar -->
+<div class="w3-sidebar w3-black w3-bar-block" style="width:15%">
+    <a href="index.html"><img src="img/logoITSiechnice.png" height="109" width="288"/></a>
+    <a href="index.html"><h3 class="w3-bar-item w3-center"><i class="fa fa-home"> Home</i></h3></a>
+    <div class="w3-sidebar w3-bar-block w3-black" style="width: 15%">
+        <a href="#" class="w3-bar-item w3-button w3-blue-gray w3-left-align w3-center w3-xlarge">VS1</a>
+        <a href="#" class="w3-bar-item w3-button w3-blue w3-left-align w3-center w3-xlarge">VS2</a>
+        <a href="#" class="w3-bar-item w3-button w3-red w3-left-align w3-center w3-xlarge">VS3</a>
+        <a href="#" class="w3-bar-item w3-button w3-aqua w3-left-align w3-center w3-xlarge">VS4</a>
+        <a href="#" class="w3-bar-item w3-button w3-orange w3-left-align w3-center w3-xlarge">VS5</a>
+        <a href="#" class="w3-bar-item w3-button w3-teal w3-left-align w3-center w3-xlarge">VS9</a>
+        <a href="#" class="w3-bar-item w3-button w3-light-green w3-left-align w3-center w3-xlarge">BHP</a>
+        <a href="#" class="w3-bar-item w3-button w3-dark-gray w3-left-align w3-center w3-xlarge">QUALITY</a>
+    </div>
+</div>
+
+<!-- Page Content -->
+<div id="mainContent" style="margin-left:15%">
+    <div class="w3-container w3-dark-gray w3-text-light-gray">
+        <div id="naglowki"><h1 id="topTitle" style="text-align: center">Key Performance Indicators Parker Hannifin
+            Manufacturing Sp. z o. o. Siechnice</h1>
+            <hr>
+            <h2 style="text-align: center">Dzisiejsza data to: <span id="date"></span></h2>
+            <h2 style="text-align: center">Poprzedni dzień roboczy: <span id="dzienRoboczy"></span></h2>
+            <hr>
+        </div>
+    </div>
+</div>
+
+<!-- Scripts -->
+<script type="text/javascript">
+    todayDate();
+    dzienRoboczy();
+</script>
+
+</body>
+</html>
