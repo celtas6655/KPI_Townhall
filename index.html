@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="pl">
 <head>
     <link rel="stylesheet" type="text/css" href="style.css">
     <meta charset="UTF-8" name="viewport" content="width=device-width, initial-scale=1">
@@ -8,6 +8,9 @@
     <link rel="stylesheet" href="https://www.w3schools.com/w3css/4/w3.css">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
     <script type="text/javascript" src="scripts.js"></script>
+    <script type="text/javascript" src="charts.js"></script>
+    <script type="text/javascript" src="init.js"></script>
+    <script type="text/javascript" src="https://www.gstatic.com/charts/loader.js"></script>
 
     <title>KPI Townhall</title>
     <link rel="icon" type="img" href="favicon.ico"/>
@@ -39,14 +42,22 @@
             <h2 style="text-align: center">Dzisiejsza data to: <span id="date"></span></h2>
             <h2 style="text-align: center">Poprzedni dzień roboczy: <span id="dzienRoboczy"></span></h2>
             <hr>
+            <div id="piechart"></div>
+            <div id="chart_div"></div>
         </div>
     </div>
 </div>
 
 <!-- Scripts -->
 <script type="text/javascript">
+    google.charts.load('current', {'packages': ['corechart']});
+    google.charts.setOnLoadCallback(drawChart);
     todayDate();
     dzienRoboczy();
+    drawChart();
+    initialize();
+    handleQueryResponse();
+
 </script>
 
 </body>

@@ -15,7 +15,6 @@ function dzienRoboczy() {
     var today;
     //Sunday=0, Monday=1 etc.
     if (d == 1) { //jak poniedzialek to pokazac piatek
-        today = "1";
         document.getElementById("dzienRoboczy").innerHTML = 6;
     } else if (d == 2) {
         today = "2";

@@ -42,3 +42,8 @@ body, html {
 #mainContent {
     border-left: 1px lightgray;
 }
+
+#chart_div{
+    height: 100%;
+    width: 100%;
+}
