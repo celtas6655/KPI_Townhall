@@ -1,19 +1,26 @@
 <!DOCTYPE html>
 <html lang="pl">
 <head>
+    <title>KPI Townhall</title>
     <link rel="stylesheet" type="text/css" href="style.css">
     <meta charset="UTF-8" name="viewport" content="width=device-width, initial-scale=1">
     <link rel="stylesheet" href="https://www.w3schools.com/w3css/4/w3.css">
     <meta name="viewport" content="width=device-width, initial-scale=1">
-    <link rel="stylesheet" href="https://www.w3schools.com/w3css/4/w3.css">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+    <link rel="icon" type="img" href="favicon.ico"/>
+
     <script type="text/javascript" src="scripts.js"></script>
     <script type="text/javascript" src="charts.js"></script>
     <script type="text/javascript" src="init.js"></script>
     <script type="text/javascript" src="https://www.gstatic.com/charts/loader.js"></script>
+    <script type="text/javascript" src="demo.js"></script>
 
-    <title>KPI Townhall</title>
-    <link rel="icon" type="img" href="favicon.ico"/>
+    <script src="RGraph/libraries/RGraph.common.sheets.js"></script>
+    <script src="RGraph/libraries/RGraph.common.key.js"></script>
+    <script src="RGraph/libraries/RGraph.common.sheets.js" ></script>
+    <script src="RGraph/libraries/RGraph.bar.js"></script>
+    <script src="RGraph/libraries/RGraph.gauge.js"></script>
+
 </head>
 <body>
 
@@ -44,6 +51,7 @@
             <hr>
             <div id="piechart"></div>
             <div id="chart_div"></div>
+            <canvas id="cvs" width="300" height="300"></canvas>
         </div>
     </div>
 </div>
@@ -57,8 +65,28 @@
     drawChart();
     initialize();
     handleQueryResponse();
-
+    demos();
 </script>
+
+<script>
+    new RGraph.Sheets('1HVCTrOhjWhqCR3EwJezPBjGx2cySZApNHki9EiiAl7c', 4, function (sheet)
+    {
+        var value = sheet.get('A1');
+
+        var gauge = new RGraph.Gauge({
+            id: 'cvs',
+            min: 0,
+            max: 100,
+            value: value,
+            options: {
+                textAccessible: true
+            }
+        }).grow();
+    });
+</script>
+
+
+
 
 </body>
 </html>
