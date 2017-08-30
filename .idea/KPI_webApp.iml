@@ -15,5 +15,7 @@
       </library>
     </orderEntry>
     <orderEntry type="library" name="loader" level="application" />
+    <orderEntry type="library" name="jquery-1.12.4" level="application" />
+    <orderEntry type="library" name="canvasjs" level="application" />
   </component>
 </module>
