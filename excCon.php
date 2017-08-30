@@ -29,3 +29,8 @@ unset($Workbook);
 $excel_app->Workbooks->Close();
 $excel_app->Quit();
 unset($excel_app);
+
+//problem bad gateway 502
+//ogarnac xamppa/wampa (usunac albo cos)
+//aktualiazacja php
+//jak odnosniki do strony zamiast miliona plikow
