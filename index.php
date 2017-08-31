@@ -25,6 +25,13 @@
 
 </head>
 
+<?php
+require 'excCon.php';
+$dataPoints = array(
+    array("y" => $excel_result, "label" => "Ilosc wyprodukowana"),
+    array("y" => $excel_result2, "label" => "Dzienny plan produkcji"),
+);
+?>
 
 <body>
 
@@ -54,11 +61,29 @@
             <!--<h2 style="text-align: center">Poprzedni dzień roboczy: <span id="dzienRoboczy"></span></h2>-->
             <hr>
             <div class="charts">
+                <h6>info info info</h6>
                 <!--                <div id="piechart"></div>-->
                 <!--                <div id="chart_div"></div>-->
                 <!--                <canvas id="cvs" width="300" height="300"></canvas>-->
                 <div id="chartContainer" style="height: 300px;width: 50%">
-
+                    <script type="text/javascript">
+                        $(function () {
+                            var chart = new CanvasJS.Chart("chartContainer", {
+                                theme: "theme2",
+                                animationEnabled: true,
+                                title: {
+                                    text: "Suma VS1"
+                                },
+                                data: [
+                                    {
+                                        type: "column",
+                                        dataPoints: <?php echo json_encode($dataPoints, JSON_NUMERIC_CHECK); ?>
+                                    }
+                                ]
+                            });
+                            chart.render();
+                        });
+                    </script>
                 </div>
             </div>
         </div>
