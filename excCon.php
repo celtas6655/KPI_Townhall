@@ -14,6 +14,24 @@ $excel_result = $excel_cell->value;
 $excel_cell = $Worksheet->Range("AN16");
 $excel_cell->activate;
 $excel_result2 = $excel_cell->value;
+//print "$excel_result2\n";
+//pie chart
+$excel_cell = $Worksheet->Range("AN15");
+$excel_cell->activate;
+$excel_result3 = $excel_cell->value;
+//print "$excel_result3\n";
+$excel_cell = $Worksheet->Range("AN41");
+$excel_cell->activate;
+$excel_result4 = $excel_cell->value;
+//print "$excel_result4\n";
+$excel_cell = $Worksheet->Range("AN81");
+$excel_cell->activate;
+$excel_result5 = $excel_cell->value;
+//print "$excel_result5\n";
+$excel_cell = $Worksheet->Range("AN102");
+$excel_cell->activate;
+$excel_result6 = $excel_cell->value;
+//print "$excel_result6\n";
 //print "$excel_result2";
 //$Worksheet = $Workbook->Worksheets($sheet2);
 //$Worksheet->activate;
@@ -23,12 +41,12 @@ $excel_result2 = $excel_cell->value;
 //print "$excel_result\n";
 
 #To close all instances of excel:
-$Workbook->Close;
-unset($Worksheet);
-unset($Workbook);
-$excel_app->Workbooks->Close();
-$excel_app->Quit();
-unset($excel_app);
+//$Workbook->Close;
+//unset($Worksheet);
+//unset($Workbook);
+//$excel_app->Workbooks->Close();
+//$excel_app->Quit();
+//unset($excel_app);
 
 //problem bad gateway 502
 //ogarnac xamppa/wampa (usunac albo cos)

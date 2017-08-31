@@ -20,6 +20,8 @@
     <script src="RGraph/libraries/RGraph.common.core.js"></script>
     <script src="RGraph/libraries/RGraph.bar.js"></script>
     <script src="RGraph/libraries/RGraph.gauge.js"></script>
+<!--    <script src="canvasjs.min.js"></script>-->
+<!--    <script src="jquery.canvasjs.min.js"></script>-->
     <script src="https://code.jquery.com/jquery-1.12.4.min.js"></script>
     <script src="https://canvasjs.com/assets/script/canvasjs.min.js"></script>
 
@@ -30,7 +32,14 @@ require 'excCon.php';
 $dataPoints = array(
     array("y" => $excel_result, "label" => "Ilosc wyprodukowana"),
     array("y" => $excel_result2, "label" => "Dzienny plan produkcji"),
-);
+    );
+
+$dataP = array(
+    array("y" => $excel_result3, "name" => "VS1", "exploded" => false),
+    array("y" => $excel_result4, "name" => "VS2"),
+    array("y" => $excel_result5, "name" => "VS3&5"),
+    array("y" => $excel_result6, "name" => "VS4"),
+    );
 ?>
 
 <body>
@@ -61,14 +70,13 @@ $dataPoints = array(
             <!--<h2 style="text-align: center">Poprzedni dzień roboczy: <span id="dzienRoboczy"></span></h2>-->
             <hr>
             <div class="charts">
-                <h6>info info info</h6>
                 <!--                <div id="piechart"></div>-->
                 <!--                <div id="chart_div"></div>-->
                 <!--                <canvas id="cvs" width="300" height="300"></canvas>-->
-                <div id="chartContainer" style="height: 300px;width: 50%">
+                <div id="chartContainer" style="height: 300px;width: 45%">
                     <script type="text/javascript">
                         $(function () {
-                            var chart = new CanvasJS.Chart("chartContainer", {
+                            var chart1 = new CanvasJS.Chart("chartContainer", {
                                 theme: "theme2",
                                 animationEnabled: true,
                                 title: {
@@ -79,9 +87,34 @@ $dataPoints = array(
                                         type: "column",
                                         dataPoints: <?php echo json_encode($dataPoints, JSON_NUMERIC_CHECK); ?>
                                     }
-                                ]
+                            ]
                             });
-                            chart.render();
+                            chart1.render();
+                        });
+                    </script>
+                </div>
+                <div id="chartContainer2" style="height: 300px;width: 45%">
+                    <script type="text/javascript">
+                        $(function () {
+                            var chart2 = new CanvasJS.Chart("chartContainer2",
+                                {
+                                    theme: "theme2",
+                                    title:{
+                                        text: "Wszystkie dzialy(Ilość wyprodukowana)"
+                                    },
+                                    exportFileName: "Dzialy",
+                                    exportEnabled: true,
+                                    animationEnabled: true,
+                                    data: [
+                                        {
+                                            type: "pie",
+                                            showInLegend: true,
+                                            toolTipContent: "{name}: <strong>{y}%</strong>",
+                                            indexLabel: "{name} {y}%",
+                                            dataP: <?php echo json_encode($dataP, JSON_NUMERIC_CHECK); ?>
+                                        }]
+                                });
+                            chart2.render();
                         });
                     </script>
                 </div>
