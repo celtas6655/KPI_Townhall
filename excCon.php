@@ -41,12 +41,12 @@ $excel_result6 = $excel_cell->value;
 //print "$excel_result\n";
 
 #To close all instances of excel:
-$Workbook->Close;
-unset($Worksheet);
-unset($Workbook);
-$excel_app->Workbooks->Close();
-$excel_app->Quit();
-unset($excel_app);
+//$Workbook->Close;
+//unset($Worksheet);
+//unset($Workbook);
+//$excel_app->Workbooks->Close();
+//$excel_app->Quit();
+//unset($excel_app);
 
 //problem bad gateway 502
 //ogarnac xamppa/wampa (usunac albo cos)

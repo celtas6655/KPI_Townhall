@@ -1,6 +1,11 @@
 <!DOCTYPE html>
 <!--dane do wykresow moga byc w osobnych plikach albo tutaj-->
 <!--ale trzeba uwazac na dataPoints w kategorii data-->
+
+<!--DODAC OSOBNE PLIKI .PHP DO POBIERANIA DANYCH DLA WYKRESOW W ROZNYCH DZIALACH - OPTYMALIZACJA?-->
+
+<!--NO PROMPT SOLVED WITH VBA MACRO-->
+
 <html lang="pl">
 <head>
     <title>KPI Townhall</title>
@@ -49,7 +54,7 @@
 
 <!-- Page Content -->
 <div id="mainContent" style="margin-left:15%">
-    <div class="w3-container w3-text-light-gray">
+    <div class="w3-container w3-text-black">
         <div id="naglowki"><h1 id="topTitle" style="text-align: center">Key Performance Indicators Parker Hannifin
                 Manufacturing Sp. z o. o. Siechnice</h1>
             <hr>
@@ -60,7 +65,7 @@
                 <!--                <div id="piechart"></div>-->
                 <!--                <div id="chart_div"></div>-->
                 <!--                <canvas id="cvs" width="300" height="300"></canvas>-->
-                <div id="chartContainer1"  style="height: 400px;width: 80%;">
+                <div id="chartContainer1"  style="height: 400px;width: 50%;">
                     <script type="text/javascript">
                         $(function () {
                             var chart1 = new CanvasJS.Chart("chartContainer1",
@@ -73,6 +78,10 @@
                                 },
                                 data: [
                                     {
+                                        indexLabel: "{y}",
+                                        indexLabelPlacement: "outside",
+                                        indexLabelOrientation: "horizontal",
+                                        indexLabelFontColor: "black",
                                         type: "column",
                                         dataPoints: <?php echo json_encode($dataPoints, JSON_NUMERIC_CHECK); ?>
                                     }
@@ -82,7 +91,7 @@
                         });
                     </script>
                 </div>
-                <div id="chartContainer2" style="height: 400px;width: 80%">
+                <div id="chartContainer2" style="height: 400px;width: 50%">
                     <script type="text/javascript">
                         $(function () {
                             var chart2 = new CanvasJS.Chart("chartContainer2",
@@ -90,7 +99,7 @@
                                     <?php require 'chart2.php';?>
                                     theme: "theme2",
                                     title:{
-                                        text: "Wszystkie dzialy (ilość wyprodukowana)"
+                                        text: "Wszystkie działy (ilość wyprodukowana)"
                                     },
                                     exportFileName: "Dzialy",
                                     exportEnabled: false,
