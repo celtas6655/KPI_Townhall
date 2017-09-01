@@ -1,4 +1,6 @@
 <!DOCTYPE html>
+<!--dane do wykresow moga byc w osobnych plikach albo tutaj-->
+<!--ale trzeba uwazac na dataPoints w kategorii data-->
 <html lang="pl">
 <head>
     <title>KPI Townhall</title>
@@ -27,21 +29,6 @@
 
 </head>
 
-<?php
-require 'excCon.php';
-$dataPoints = array(
-    array("y" => $excel_result, "label" => "Ilosc wyprodukowana"),
-    array("y" => $excel_result2, "label" => "Dzienny plan produkcji"),
-    );
-
-$dataP = array(
-    array("y" => $excel_result3, "name" => "VS1", "exploded" => false),
-    array("y" => $excel_result4, "name" => "VS2"),
-    array("y" => $excel_result5, "name" => "VS3&5"),
-    array("y" => $excel_result6, "name" => "VS4"),
-    );
-?>
-
 <body>
 
 <!-- Sidebar -->
@@ -69,14 +56,16 @@ $dataP = array(
             <h2 style="text-align: center">Dzisiejsza data to: <span id="date"></span></h2>
             <!--<h2 style="text-align: center">Poprzedni dzień roboczy: <span id="dzienRoboczy"></span></h2>-->
             <hr>
-            <div class="charts">
+            <div class="charts" style="height: 800px;width: 80%;">
                 <!--                <div id="piechart"></div>-->
                 <!--                <div id="chart_div"></div>-->
                 <!--                <canvas id="cvs" width="300" height="300"></canvas>-->
-                <div id="chartContainer" style="height: 300px;width: 45%">
+                <div id="chartContainer1"  style="height: 400px;width: 80%;">
                     <script type="text/javascript">
                         $(function () {
-                            var chart1 = new CanvasJS.Chart("chartContainer", {
+                            var chart1 = new CanvasJS.Chart("chartContainer1",
+                                {
+                                    <?php require 'chart1.php';?>
                                 theme: "theme2",
                                 animationEnabled: true,
                                 title: {
@@ -93,25 +82,26 @@ $dataP = array(
                         });
                     </script>
                 </div>
-                <div id="chartContainer2" style="height: 300px;width: 45%">
+                <div id="chartContainer2" style="height: 400px;width: 80%">
                     <script type="text/javascript">
                         $(function () {
                             var chart2 = new CanvasJS.Chart("chartContainer2",
                                 {
+                                    <?php require 'chart2.php';?>
                                     theme: "theme2",
                                     title:{
-                                        text: "Wszystkie dzialy(Ilość wyprodukowana)"
+                                        text: "Wszystkie dzialy (ilość wyprodukowana)"
                                     },
                                     exportFileName: "Dzialy",
-                                    exportEnabled: true,
-                                    animationEnabled: true,
+                                    exportEnabled: false,
+                                    animationEnabled: false,
                                     data: [
                                         {
                                             type: "pie",
                                             showInLegend: true,
-                                            toolTipContent: "{name}: <strong>{y}%</strong>",
-                                            indexLabel: "{name} {y}%",
-                                            dataP: <?php echo json_encode($dataP, JSON_NUMERIC_CHECK); ?>
+                                            toolTipContent: "{name}: <strong>{y}</strong>",
+                                            indexLabel: "{name} {y}",
+                                            dataPoints: <?php echo json_encode($dataP, JSON_NUMERIC_CHECK); ?>
                                         }]
                                 });
                             chart2.render();
