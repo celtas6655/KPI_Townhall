@@ -4,7 +4,22 @@
 
 <!--DODAC OSOBNE PLIKI .PHP DO POBIERANIA DANYCH DLA WYKRESOW W ROZNYCH DZIALACH - OPTYMALIZACJA?-->
 
-<!--NO PROMPT SOLVED WITH VBA MACRO-->
+<!--NO PROMPT SOLVED WITH VBA MACRO DONE-->
+
+
+<!--ZROBIC ODPALANIE AJAX-EM-->
+
+<!--czarne to cele-->
+<!--lisc dostawy na czas do klienta(zmienny) dazenie do 98%-->
+<!--2 kolumna to wynik-->
+<!---->
+<!--misser dla czesci standardowych- im mniej tym lepiej (powyzej na czerwono/nizej na zielono)-->
+<!---->
+<!--najstarsze zamowienie <30-->
+<!---->
+<!--lb 0.5 dnia im mniej tym lepiej-->
+<!---->
+<!--opoznione linie 180-->
 
 <html lang="pl">
 <head>
