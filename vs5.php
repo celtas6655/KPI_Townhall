@@ -1,4 +1,27 @@
 <!DOCTYPE html>
+<?php require 'conv5.php';?>
+<!--dane do wykresow moga byc w osobnych plikach albo tutaj-->
+<!--ale trzeba uwazac na dataPoints w kategorii data-->
+
+<!--DODAC OSOBNE PLIKI .PHP DO POBIERANIA DANYCH DLA WYKRESOW W ROZNYCH DZIALACH - OPTYMALIZACJA?-->
+
+<!--NO PROMPT SOLVED WITH VBA MACRO DONE-->
+
+
+<!--ZROBIC ODPALANIE AJAX-EM-->
+
+<!--czarne to cele-->
+<!--lisc dostawy na czas do klienta(zmienny) dazenie do 98%-->
+<!--2 kolumna to wynik-->
+<!---->
+<!--misser dla czesci standardowych- im mniej tym lepiej (powyzej na czerwono/nizej na zielono)-->
+<!---->
+<!--najstarsze zamowienie <30-->
+<!---->
+<!--lb 0.5 dnia im mniej tym lepiej-->
+<!---->
+<!--opoznione linie 180-->
+
 <html lang="pl">
 <head>
     <title>KPI Townhall</title>
@@ -20,11 +43,12 @@
     <script src="RGraph/libraries/RGraph.common.core.js"></script>
     <script src="RGraph/libraries/RGraph.bar.js"></script>
     <script src="RGraph/libraries/RGraph.gauge.js"></script>
+    <!--    <script src="canvasjs.min.js"></script>-->
+    <!--    <script src="jquery.canvasjs.min.js"></script>-->
     <script src="https://code.jquery.com/jquery-1.12.4.min.js"></script>
     <script src="https://canvasjs.com/assets/script/canvasjs.min.js"></script>
 
 </head>
-
 
 <body>
 
@@ -46,19 +70,142 @@
 
 <!-- Page Content -->
 <div id="mainContent" style="margin-left:15%">
-    <div class="w3-container w3-text-light-gray">
+    <div class="w3-container w3-text-black">
         <div id="naglowki"><h1 id="topTitle" style="text-align: center">Key Performance Indicators Parker Hannifin
                 Manufacturing Sp. z o. o. Siechnice</h1>
             <hr>
             <h2 style="text-align: center">Dzisiejsza data to: <span id="date"></span></h2>
             <!--<h2 style="text-align: center">Poprzedni dzień roboczy: <span id="dzienRoboczy"></span></h2>-->
             <hr>
-            <div class="charts">
+            <div class="charts" style="height: 800px;width: 100%;">
                 <!--                <div id="piechart"></div>-->
                 <!--                <div id="chart_div"></div>-->
                 <!--                <canvas id="cvs" width="300" height="300"></canvas>-->
-                <div id="chartContainer" style="height: 300px;width: 50%">
-                    <h6>VS5 content</h6>
+                <div id="chartContainer1"  style="height: 400px;width: 50%;">
+                    <script type="text/javascript">
+                        $(function () {
+                            var chart1 = new CanvasJS.Chart("chartContainer1",
+                                {
+                                    theme: "theme2",
+                                    animationEnabled: true,
+                                    title: {
+                                        text: "LISC"
+                                    },
+                                    data: [
+                                        {
+                                            indexLabel: "{y}",
+                                            indexLabelPlacement: "outside",
+                                            indexLabelOrientation: "horizontal",
+                                            indexLabelFontColor: "black",
+                                            type: "column",
+                                            dataPoints: <?php echo json_encode($dataPo, JSON_NUMERIC_CHECK); ?>
+                                        }
+                                    ]
+                                });
+                            chart1.render();
+                        });
+                    </script>
+                </div>
+                <div id="chartContainer2" style="height: 400px;width: 50%">
+                    <script type="text/javascript">
+                        $(function () {
+                            var chart2 = new CanvasJS.Chart("chartContainer2",
+                                {
+                                    theme: "theme2",
+                                    animationEnabled: true,
+                                    title: {
+                                        text: "MISSER"
+                                    },
+                                    data: [
+                                        {
+                                            indexLabel: "{y}",
+                                            indexLabelPlacement: "outside",
+                                            indexLabelOrientation: "horizontal",
+                                            indexLabelFontColor: "black",
+                                            type: "column",
+                                            dataPoints: <?php echo json_encode($dataPoi, JSON_NUMERIC_CHECK); ?>
+                                        }
+                                    ]
+                                });
+                            chart2.render();
+                        });
+                    </script>
+                </div>
+                <div id="chartContainer3" style="height: 400px;width: 50%">
+                    <script type="text/javascript">
+                        $(function () {
+                            var chart3 = new CanvasJS.Chart("chartContainer3",
+                                {
+                                    theme: "theme2",
+                                    animationEnabled: true,
+                                    title: {
+                                        text: "Najstarsze zamówienie"
+                                    },
+                                    data: [
+                                        {
+                                            indexLabel: "{y}",
+                                            indexLabelPlacement: "outside",
+                                            indexLabelOrientation: "horizontal",
+                                            indexLabelFontColor: "black",
+                                            type: "column",
+                                            dataPoints: <?php echo json_encode($dataPoin, JSON_NUMERIC_CHECK); ?>
+                                        }
+                                    ]
+                                });
+                            chart3.render();
+                        });
+                    </script>
+                </div>
+                <div id="chartContainer4" style="height: 400px;width: 50%">
+                    <script type="text/javascript">
+                        $(function () {
+                            var chart4 = new CanvasJS.Chart("chartContainer4",
+                                {
+                                    theme: "theme2",
+                                    animationEnabled: true,
+                                    title: {
+                                        text: "LB"
+                                    },
+                                    data: [
+                                        {
+                                            indexLabel: "{y}",
+                                            indexLabelPlacement: "outside",
+                                            indexLabelOrientation: "horizontal",
+                                            indexLabelFontColor: "black",
+                                            type: "column",
+                                            dataPoints: <?php echo json_encode($dataPoint, JSON_NUMERIC_CHECK); ?>
+                                        }
+                                    ]
+                                });
+                            chart4.render();
+                        });
+                    </script>
+                </div>
+                <div id="chartContainer5" style="height: 400px;width: 50%">
+                    <script type="text/javascript">
+                        $(function () {
+                            var chart5 = new CanvasJS.Chart("chartContainer5",
+                                {
+
+                                    theme: "theme2",
+                                    animationEnabled: true,
+                                    title: {
+                                        text: "Opóźnione linie"
+                                    },
+                                    data: [
+                                        {
+                                            indexLabel: "{y}",
+                                            indexLabelPlacement: "outside",
+                                            indexLabelOrientation: "horizontal",
+                                            indexLabelFontColor: "black",
+                                            type: "column",
+                                            dataPoints: <?php echo json_encode($dataPointt, JSON_NUMERIC_CHECK); ?>
+                                        }
+                                    ]
+                                });
+                            chart5.render();
+                        });
+                    </script>
                 </div>
             </div>
         </div>
