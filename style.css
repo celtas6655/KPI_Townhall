@@ -50,12 +50,28 @@ body{
 }
 
 .charts{
-    display: block;
-    margin: 0 auto;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-around;
+}
+.czarcik{
+    flex: 0 0 32%;
+    height: 50px;
+    margin-bottom: 5px;
+    background-color: #999;
+}
+.czarcik:nth-child(3n){
+    background-color: #F00;
 }
 
 img{
     max-width: 100%;
     height: auto;
     width: auto\9;
+}
+
+#mainContent{
+    display: flex;
+    align-items: center;
+    justify-content: center;
 }
