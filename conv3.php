@@ -75,10 +75,9 @@ $excel_cell = $Worksheet->Range("J10");
 $excel_cell->activate;
 $excel_result20 = $excel_cell->value;
 //print "$excel_result8\n";
-
 $dataPo = array(
-    array("y" => $excel_result7*100, "label" => "Wczoraj"),
-    array("y" => $excel_result8*100, "label" => "Dzisiaj"),
+    array("y" => round($excel_result7,4)*100, "label" => "Wczoraj"),
+    array("y" => round($excel_result8,4)*100, "label" => "Dzisiaj"),
     array("y" => $excel_result9*100, "label" => "Cel"),
 );
 $dataPoi = array(

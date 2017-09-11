@@ -81,7 +81,7 @@
                 <!--                <div id="piechart"></div>-->
                 <!--                <div id="chart_div"></div>-->
                 <!--                <canvas id="cvs" width="300" height="300"></canvas>-->
-                <div id="chartContainer1"  style="height: 400px;width: 50%;">
+                <div class="czarcik" id="chartContainer1"  style="height: 400px;width: 50%;">
                     <script type="text/javascript">
                         $(function () {
                             var chart1 = new CanvasJS.Chart("chartContainer1",
@@ -89,7 +89,10 @@
                                     theme: "theme2",
                                     animationEnabled: true,
                                     title: {
-                                        text: "LISC"
+                                        text: "LISC[%]"
+                                    },
+                                    axisY:{
+                                      interval: 20
                                     },
                                     data: [
                                         {
@@ -106,7 +109,7 @@
                         });
                     </script>
                 </div>
-                <div id="chartContainer2" style="height: 400px;width: 50%">
+                <div class="czarcik" id="chartContainer2" style="height: 400px;width: 50%">
                     <script type="text/javascript">
                         $(function () {
                             var chart2 = new CanvasJS.Chart("chartContainer2",
@@ -131,7 +134,7 @@
                         });
                     </script>
                 </div>
-                <div id="chartContainer3" style="height: 400px;width: 50%">
+                <div class="czarcik" id="chartContainer3" style="height: 400px;width: 50%">
                     <script type="text/javascript">
                         $(function () {
                             var chart3 = new CanvasJS.Chart("chartContainer3",
@@ -156,7 +159,7 @@
                         });
                     </script>
                 </div>
-                <div id="chartContainer4" style="height: 400px;width: 50%">
+                <div class="czarcik" id="chartContainer4" style="height: 400px;width: 50%">
                     <script type="text/javascript">
                         $(function () {
                             var chart4 = new CanvasJS.Chart("chartContainer4",
@@ -181,7 +184,7 @@
                         });
                     </script>
                 </div>
-                <div id="chartContainer5" style="height: 400px;width: 50%">
+                <div class="czarcik" id="chartContainer5" style="height: 400px;width: 50%">
                     <script type="text/javascript">
                         $(function () {
                             var chart5 = new CanvasJS.Chart("chartContainer5",
