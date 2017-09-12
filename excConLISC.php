@@ -76,9 +76,15 @@ $excel_cell->activate;
 $excel_result20 = $excel_cell->value;
 //print "$excel_result8\n";
 
+//if ($excel_result8 > $excel_result9){
+//    $color = "green";
+//}
+//else{$color = "red";}
+
+
 $dataPo = array(
-    array("y" => round($excel_result7,4)*100, "label" => "Wczoraj"),
-    array("y" => round($excel_result8,4)*100, "label" => "Dzisiaj"),
+    array("y" => round($excel_result7,4)*100,"color" => "", "label" => "Wczoraj"),
+    array("y" => round($excel_result8,4)*100,"color" => "", "label" => "Dzisiaj"),
     array("y" => $excel_result9*100, "label" => "Cel"),
 );
 $dataPoi = array(
