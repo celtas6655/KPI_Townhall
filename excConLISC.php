@@ -6,7 +6,7 @@ $Workbook = $excel_app->Workbooks->Open("$filename") or Die("Did not open $filen
 $Worksheet = $Workbook->Worksheets($sheet1);
 
 $Worksheet->activate;
-$excel_cell = $Worksheet->Range("B6");
+$excel_cell = $Worksheet->Range("B6"); //cel lisc vs1
 $excel_cell->activate;
 $excel_result9 = $excel_cell->value;
 //print "$excel_result7\n";
@@ -20,7 +20,7 @@ $excel_cell->activate;
 $excel_result8 = $excel_cell->value;
 //print "$excel_result8\n";
 $Worksheet->activate;
-$excel_cell = $Worksheet->Range("B7");
+$excel_cell = $Worksheet->Range("B7"); //cel misser vs1
 $excel_cell->activate;
 $excel_result12 = $excel_cell->value;
 //print "$excel_result7\n";
@@ -34,7 +34,7 @@ $excel_cell->activate;
 $excel_result11 = $excel_cell->value;
 //print "$excel_result8\n";
 $Worksheet->activate;
-$excel_cell = $Worksheet->Range("B8");
+$excel_cell = $Worksheet->Range("B8"); //cel najst zam vs1
 $excel_cell->activate;
 $excel_result15 = $excel_cell->value;
 //print "$excel_result7\n";
@@ -48,7 +48,7 @@ $excel_cell->activate;
 $excel_result14 = $excel_cell->value;
 //print "$excel_result8\n";
 $Worksheet->activate;
-$excel_cell = $Worksheet->Range("B9");
+$excel_cell = $Worksheet->Range("B9"); //cel lb vs1
 $excel_cell->activate;
 $excel_result18 = $excel_cell->value;
 //print "$excel_result7\n";
@@ -62,7 +62,7 @@ $excel_cell->activate;
 $excel_result17 = $excel_cell->value;
 //print "$excel_result8\n";
 $Worksheet->activate;
-$excel_cell = $Worksheet->Range("B10");
+$excel_cell = $Worksheet->Range("B10"); //cel opozn lin vs1
 $excel_cell->activate;
 $excel_result21 = $excel_cell->value;
 //print "$excel_result7\n";
@@ -159,8 +159,8 @@ $dataPointt = array(
 
 #To close all instances of excel:
 //$Workbook->Close;
-//unset($Worksheet);
-//unset($Workbook);
+unset($Worksheet);
+unset($Workbook);
 //$excel_app->Workbooks->Close();
 //$excel_app->Quit();
-//unset($excel_app);
+unset($excel_app);
