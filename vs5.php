@@ -92,7 +92,18 @@
                                         text: "LISC[%]"
                                     },
                                     axisY:{
-                                        interval: 20
+                                        maximum: 100,
+                                        interval: 20,
+                                        stripLines:[
+                                            {
+                                                value: <?php echo json_encode($excel_result9*100, JSON_NUMERIC_CHECK); ?>,
+                                                lineDashType: "dot",
+                                                label: "Cel: 90%",
+                                                showOnTop: true,
+                                                thickness: 5,
+                                                labelPlacement: "outside"
+                                            }
+                                        ]
                                     },
                                     data: [
                                         {
@@ -119,6 +130,18 @@
                                     title: {
                                         text: "MISSER[ppt]"
                                     },
+                                    axisY:{
+                                        stripLines:[
+                                            {
+                                                value: <?php echo json_encode($excel_result12, JSON_NUMERIC_CHECK); ?>,
+                                                lineDashType: "dot",
+                                                label: "Cel: 30",//zmieniac auto cel<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<
+                                                showOnTop: true,
+                                                thickness: 5,
+                                                labelPlacement: "outside"
+                                            }
+                                        ]
+                                    },
                                     data: [
                                         {
                                             indexLabel: "{y}",
@@ -143,6 +166,18 @@
                                     animationEnabled: true,
                                     title: {
                                         text: "Najstarsze zamówienie[dni]"
+                                    },
+                                    axisY:{
+                                        stripLines:[
+                                            {
+                                                value: <?php echo json_encode($excel_result15, JSON_NUMERIC_CHECK); ?>,
+                                                lineDashType: "dot",
+                                                label: "Cel: 30",//zmieniac auto cel<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<
+                                                showOnTop: true,
+                                                thickness: 5,
+                                                labelPlacement: "outside"
+                                            }
+                                        ]
                                     },
                                     data: [
                                         {
@@ -169,6 +204,18 @@
                                     title: {
                                         text: "LB[dni]"
                                     },
+                                    axisY:{
+                                        stripLines:[
+                                            {
+                                                value: <?php echo json_encode($excel_result18, JSON_NUMERIC_CHECK); ?>,
+                                                lineDashType: "dot",
+                                                label: "Cel: 0.5",//zmieniac auto cel<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<
+                                                showOnTop: true,
+                                                thickness: 5,
+                                                labelPlacement: "outside"
+                                            }
+                                        ]
+                                    },
                                     data: [
                                         {
                                             indexLabel: "{y}",
@@ -194,6 +241,18 @@
                                     animationEnabled: true,
                                     title: {
                                         text: "Opóźnione linie"
+                                    },
+                                    axisY:{
+                                        stripLines:[
+                                            {
+                                                value: <?php echo json_encode($excel_result21, JSON_NUMERIC_CHECK); ?>,
+                                                lineDashType: "dot",
+                                                label: "Cel: 30",//zmieniac auto cel<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<
+                                                showOnTop: true,
+                                                thickness: 5,
+                                                labelPlacement: "outside"
+                                            }
+                                        ]
                                     },
                                     data: [
                                         {

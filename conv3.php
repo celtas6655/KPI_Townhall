@@ -75,36 +75,92 @@ $excel_cell = $Worksheet->Range("J10");
 $excel_cell->activate;
 $excel_result20 = $excel_cell->value;
 //print "$excel_result8\n";
+
+if ($excel_result7 > $excel_result9) {
+    $color = "green";
+} else {
+    $color = "red";
+}
+
+if ($excel_result8 > $excel_result9) {
+    $color1 = "green";
+} else {
+    $color1 = "red";
+}
+
+if ($excel_result10 < $excel_result12) {
+    $color2 = "green";
+} else {
+    $color2 = "red";
+}
+if ($excel_result11 < $excel_result12) {
+    $color3 = "green";
+} else {
+    $color3 = "red";
+}
+
+if ($excel_result13 < $excel_result15) {
+    $color4 = "green";
+} else {
+    $color4 = "red";
+}
+
+if ($excel_result14 < $excel_result15) {
+    $color5 = "green";
+} else {
+    $color5 = "red";
+}
+
+if ($excel_result16 < $excel_result18) {
+    $color6 = "green";
+} else {
+    $color6 = "red";
+}
+
+if ($excel_result17 < $excel_result18) {
+    $color7 = "green";
+} else {
+    $color7 = "red";
+}
+
+if ($excel_result19 < $excel_result21) {
+    $color8 = "green";
+} else {
+    $color8 = "red";
+}
+
+if ($excel_result20 < $excel_result21) {
+    $color9 = "green";
+} else {
+    $color9 = "red";
+}
+
+
 $dataPo = array(
-    array("y" => round($excel_result7,4)*100, "label" => "Wczoraj"),
-    array("y" => round($excel_result8,4)*100, "label" => "Dzisiaj"),
-    array("y" => $excel_result9*100, "label" => "Cel"),
+    array("y" => round($excel_result7,4)*100,"color" => $color, "label" => "Wczoraj"),
+    array("y" => round($excel_result8,4)*100,"color" => $color1, "label" => "Dzisiaj"),
 );
 $dataPoi = array(
-    array("y" => $excel_result10, "label" => "Wczoraj"),
-    array("y" => $excel_result11, "label" => "Dzisiaj"),
-    array("y" => $excel_result12, "label" => "Cel"),
+    array("y" => $excel_result10,"color" => $color2, "label" => "Wczoraj"),
+    array("y" => $excel_result11,"color" => $color3, "label" => "Dzisiaj"),
 );
 $dataPoin = array(
-    array("y" => $excel_result13, "label" => "Wczoraj"),
-    array("y" => $excel_result14, "label" => "Dzisiaj"),
-    array("y" => $excel_result15, "label" => "Cel"),
+    array("y" => $excel_result13,"color" => $color4, "label" => "Wczoraj"),
+    array("y" => $excel_result14,"color" => $color5, "label" => "Dzisiaj"),
 );
 $dataPoint = array(
-    array("y" => $excel_result16, "label" => "Wczoraj"),
-    array("y" => $excel_result17, "label" => "Dzisiaj"),
-    array("y" => $excel_result18, "label" => "Cel"),
+    array("y" => $excel_result16,"color" => $color6, "label" => "Wczoraj"),
+    array("y" => $excel_result17,"color" => $color7, "label" => "Dzisiaj"),
 );
 $dataPointt = array(
-    array("y" => $excel_result19, "label" => "Wczoraj"),
-    array("y" => $excel_result20, "label" => "Dzisiaj"),
-    array("y" => $excel_result21, "label" => "Cel"),
+    array("y" => $excel_result19,"color" => $color8, "label" => "Wczoraj"),
+    array("y" => $excel_result20,"color" => $color9, "label" => "Dzisiaj"),
 );
 
 #To close all instances of excel:
-$Workbook->Close;
-unset($Worksheet);
-unset($Workbook);
-$excel_app->Workbooks->Close();
-$excel_app->Quit();
-unset($excel_app);
+//$Workbook->Close;
+//unset($Worksheet);
+//unset($Workbook);
+//$excel_app->Workbooks->Close();
+//$excel_app->Quit();
+//unset($excel_app);
