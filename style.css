@@ -59,6 +59,7 @@ body{
     height: 50px;
     margin-bottom: 5px;
     background-color: #999;
+    margin-outside: 50px;
 }
 .czarcik:nth-child(3n){
     background-color: #F00;

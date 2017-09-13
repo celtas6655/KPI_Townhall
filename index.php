@@ -56,12 +56,12 @@
     <a href="index.php"><img src="img/logoITSiechnice.png" height="109" width="288"/></a>
     <a href="index.php"><h3 class="w3-bar-item w3-center"><i class="fa fa-home"> Home</i></h3></a>
     <div class="w3-sidebar w3-bar-block w3-black" style="width: 15%">
-        <div><a href="vs1.php" class="w3-bar-item w3-button w3-blue-gray w3-left-align w3-center w3-xlarge">VS1</a></div>
-        <div><a href="vs2.php" class="w3-bar-item w3-button w3-blue w3-left-align w3-center w3-xlarge">VS2</a></div>
-        <div><a href="vs3.php" class="w3-bar-item w3-button w3-red w3-left-align w3-center w3-xlarge">VS3</a></div>
-        <div><a href="vs4.php" class="w3-bar-item w3-button w3-aqua w3-left-align w3-center w3-xlarge">VS4</a></div>
-        <div><a href="vs5.php" class="w3-bar-item w3-button w3-orange w3-left-align w3-center w3-xlarge">VS5</a></div>
-        <a href="vs9.php" class="w3-bar-item w3-button w3-teal w3-left-align w3-center w3-xlarge">VS9</a>
+        <div><a href="vs1.php" class="w3-bar-item w3-button w3-blue w3-left-align w3-center w3-xlarge">VS1</a></div>
+        <div><a href="vs2.php" class="w3-bar-item w3-button w3-green w3-left-align w3-center w3-xlarge">VS2</a></div>
+        <div><a href="vs3.php" class="w3-bar-item w3-button w3-yellow w3-left-align w3-center w3-xlarge">VS3</a></div>
+        <div><a href="vs4.php" class="w3-bar-item w3-button w3-purple w3-left-align w3-center w3-xlarge">VS4</a></div>
+        <div><a href="vs5.php" class="w3-bar-item w3-button w3-gray w3-left-align w3-center w3-xlarge">VS5</a></div>
+        <a href="vs9.php" class="w3-bar-item w3-button w3-black w3-left-align w3-center w3-xlarge">VS9</a>
         <a href="bhp.php" class="w3-bar-item w3-button w3-light-green w3-left-align w3-center w3-xlarge">BHP</a>
         <a href="quality.php" class="w3-bar-item w3-button w3-dark-gray w3-left-align w3-center w3-xlarge">QUALITY</a>
     </div>
