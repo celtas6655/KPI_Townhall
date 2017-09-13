@@ -57,7 +57,7 @@
     <a href="index.php"><img src="img/logoITSiechnice.png" height="109" width="288"/></a>
     <a href="index.php"><h3 class="w3-bar-item w3-center"><i class="fa fa-home"> Home</i></h3></a>
     <div class="w3-sidebar w3-bar-block w3-black" style="width: 15%">
-        <div><a href="vs1.php" class="w3-bar-item w3-button w3-blue w3-left-align w3-center w3-xlarge">VS1</a></div>
+        <div><a href="vs1.php" class="w3-bar-item w3-button w3-blue w3-left-align w3-center w3-xlarge">> VS1 <</a></div>
         <div><a href="vs2.php" class="w3-bar-item w3-button w3-green w3-left-align w3-center w3-xlarge">VS2</a></div>
         <div><a href="vs3.php" class="w3-bar-item w3-button w3-yellow w3-left-align w3-center w3-xlarge">VS3</a></div>
         <div><a href="vs4.php" class="w3-bar-item w3-button w3-purple w3-left-align w3-center w3-xlarge">VS4</a></div>
@@ -89,7 +89,7 @@
                                     theme: "theme2",
                                     animationEnabled: true,
                                     title: {
-                                        text: "LISC[%]"
+                                        text: "LISC [%]"
                                     },
                                     axisY:{
                                         maximum: 100,
@@ -98,7 +98,7 @@
                                             {
                                                 value: <?php echo json_encode($excel_result9*100, JSON_NUMERIC_CHECK); ?>,
                                                 lineDashType: "dot",
-                                                label: "Cel: 85%",//zmieniac auto cel<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<
+                                                label: "Cel: <?php echo json_encode($excel_result9*100, JSON_NUMERIC_CHECK); ?>%",//zmieniac auto cel<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<
                                                 showOnTop: true,
                                                 thickness: 5,
                                                 labelPlacement: "outside"
@@ -128,14 +128,14 @@
                                     theme: "theme2",
                                     animationEnabled: true,
                                     title: {
-                                        text: "MISSER[ppt]"
+                                        text: "MISSER [ppt]"
                                     },
                                     axisY:{
                                         stripLines:[
                                             {
                                                 value: <?php echo json_encode($excel_result12, JSON_NUMERIC_CHECK); ?>,
                                                 lineDashType: "dot",
-                                                label: "Cel: 30ppt",
+                                                label: "Cel: <?php echo json_encode($excel_result12, JSON_NUMERIC_CHECK); ?>ppt",
                                                 showOnTop: true,
                                                 thickness: 5,
                                                 labelPlacement: "outside"
@@ -165,14 +165,14 @@
                                     theme: "theme2",
                                     animationEnabled: true,
                                     title: {
-                                        text: "Najstarsze zamówienie[dni]"
+                                        text: "Najstarsze zamówienie [dni]"
                                     },
                                     axisY:{
                                         stripLines:[
                                             {
                                                 value: <?php echo json_encode($excel_result15, JSON_NUMERIC_CHECK); ?>,
                                                 lineDashType: "dot",
-                                                label: "Cel: 30",
+                                                label: "Cel: <?php echo json_encode($excel_result15, JSON_NUMERIC_CHECK); ?>",
                                                 showOnTop: true,
                                                 thickness: 5,
                                                 labelPlacement: "outside"
@@ -202,14 +202,14 @@
                                     theme: "theme2",
                                     animationEnabled: true,
                                     title: {
-                                        text: "LB[dni]"
+                                        text: "LB [dni]"
                                     },
                                     axisY:{
                                         stripLines:[
                                             {
                                                 value: <?php echo json_encode($excel_result18, JSON_NUMERIC_CHECK); ?>,
                                                 lineDashType: "dot",
-                                                label: "Cel: 0.5",
+                                                label: "Cel: <?php echo json_encode($excel_result18, JSON_NUMERIC_CHECK); ?>",
                                                 showOnTop: true,
                                                 thickness: 5,
                                                 labelPlacement: "outside"
@@ -247,7 +247,7 @@
                                             {
                                                 value: <?php echo json_encode($excel_result21, JSON_NUMERIC_CHECK); ?>,
                                                 lineDashType: "dot",
-                                                label: "Cel: 180",
+                                                label: "Cel: <?php echo json_encode($excel_result21, JSON_NUMERIC_CHECK); ?>",
                                                 showOnTop: true,
                                                 thickness: 5,
                                                 labelPlacement: "outside"

@@ -89,7 +89,7 @@
                                     theme: "theme2",
                                     animationEnabled: true,
                                     title: {
-                                        text: "LISC[%]"
+                                        text: "LISC [%]"
                                     },
                                     axisY:{
                                         maximum: 100,
@@ -98,7 +98,7 @@
                                             {
                                                 value: <?php echo json_encode($excel_result9*100, JSON_NUMERIC_CHECK); ?>,
                                                 lineDashType: "dot",
-                                                label: "Cel: 83%",//zmieniac auto cel<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<
+                                                label: "Cel: <?php echo json_encode($excel_result9*100, JSON_NUMERIC_CHECK); ?>%",//zmieniac auto cel<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<
                                                 showOnTop: true,
                                                 thickness: 5,
                                                 labelPlacement: "outside"
@@ -128,14 +128,14 @@
                                     theme: "theme2",
                                     animationEnabled: true,
                                     title: {
-                                        text: "MISSER[ppt]"
+                                        text: "MISSER [ppt]"
                                     },
                                     axisY:{
                                         stripLines:[
                                             {
                                                 value: <?php echo json_encode($excel_result12, JSON_NUMERIC_CHECK); ?>,
                                                 lineDashType: "dot",
-                                                label: "Cel: 30",//zmieniac auto cel<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<
+                                                label: "Cel: <?php echo json_encode($excel_result12, JSON_NUMERIC_CHECK); ?>",//zmieniac auto cel<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<
                                                 showOnTop: true,
                                                 thickness: 5,
                                                 labelPlacement: "outside"
@@ -165,14 +165,14 @@
                                     theme: "theme2",
                                     animationEnabled: true,
                                     title: {
-                                        text: "Najstarsze zamówienie[dni]"
+                                        text: "Najstarsze zamówienie [dni]"
                                     },
                                     axisY:{
                                         stripLines:[
                                             {
                                                 value: <?php echo json_encode($excel_result15, JSON_NUMERIC_CHECK); ?>,
                                                 lineDashType: "dot",
-                                                label: "Cel: 30",//zmieniac auto cel<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<
+                                                label: "Cel: <?php echo json_encode($excel_result15, JSON_NUMERIC_CHECK); ?>",//zmieniac auto cel<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<
                                                 showOnTop: true,
                                                 thickness: 5,
                                                 labelPlacement: "outside"
@@ -202,14 +202,14 @@
                                     theme: "theme2",
                                     animationEnabled: true,
                                     title: {
-                                        text: "LB[dni]"
+                                        text: "LB [dni]"
                                     },
                                     axisY:{
                                         stripLines:[
                                             {
                                                 value: <?php echo json_encode($excel_result18, JSON_NUMERIC_CHECK); ?>,
                                                 lineDashType: "dot",
-                                                label: "Cel: 0.5",//zmieniac auto cel<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<
+                                                label: "Cel: <?php echo json_encode($excel_result18, JSON_NUMERIC_CHECK); ?>",//zmieniac auto cel<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<
                                                 showOnTop: true,
                                                 thickness: 5,
                                                 labelPlacement: "outside"
@@ -247,7 +247,7 @@
                                             {
                                                 value: <?php echo json_encode($excel_result21, JSON_NUMERIC_CHECK); ?>,
                                                 lineDashType: "dot",
-                                                label: "Cel: 130",//zmieniac auto cel<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<
+                                                label: "Cel: <?php echo json_encode($excel_result21, JSON_NUMERIC_CHECK); ?>",//zmieniac auto cel<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<
                                                 showOnTop: true,
                                                 thickness: 5,
                                                 labelPlacement: "outside"
