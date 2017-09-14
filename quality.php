@@ -40,7 +40,8 @@
         <div><a href="vs5.php" class="w3-bar-item w3-button w3-orange w3-left-align w3-center w3-xlarge">VS5</a></div>
         <a href="vs9.php" class="w3-bar-item w3-button w3-teal w3-left-align w3-center w3-xlarge">VS9</a>
         <a href="bhp.php" class="w3-bar-item w3-button w3-light-green w3-left-align w3-center w3-xlarge">BHP</a>
-        <a href="quality.php" class="w3-bar-item w3-button w3-dark-gray w3-left-align w3-center w3-xlarge">QUALITY</a>
+        <a href="quality.php" class="w3-bar-item w3-button w3-dark-gray w3-left-align w3-center w3-xlarge">> QUALITY <</a>
+        <div id="refresh"><a href="quality.php"><i class="fa fa-refresh w3-xxxlarge"></i></a></div>
     </div>
 </div>
 
@@ -50,7 +51,7 @@
         <div id="naglowki"><h1 id="topTitle" style="text-align: center">Key Performance Indicators Parker Hannifin
                 Manufacturing Sp. z o. o. Siechnice</h1>
             <hr>
-            <h2 style="text-align: center">Dzisiejsza data to: <span id="date"></span></h2>
+            <h2 style="text-align: center"><span id="date"></span></h2>
             <!--<h2 style="text-align: center">Poprzedni dzień roboczy: <span id="dzienRoboczy"></span></h2>-->
             <hr>
             <div class="charts">

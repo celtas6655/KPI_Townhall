@@ -31,6 +31,18 @@ $excel_result5 = $excel_cell->value;
 $excel_cell = $Worksheet->Range("AN102");
 $excel_cell->activate;
 $excel_result6 = $excel_cell->value;
+
+$dataPoints = array(
+    array("y" => $excel_result, "label" => "Ilość wyprodukowana"),
+    array("y" => $excel_result2, "label" => "Dzienny plan produkcji"),
+);
+
+$dataP = array(
+    array("y" => $excel_result3, "name" => "VS1", "exploded" => false),
+    array("y" => $excel_result4, "name" => "VS2"),
+    array("y" => $excel_result5, "name" => "VS3&5"),
+    array("y" => $excel_result6, "name" => "VS4"),
+);
 //print "$excel_result6\n";
 //print "$excel_result2";
 //$Worksheet = $Workbook->Worksheets($sheet2);
@@ -42,11 +54,11 @@ $excel_result6 = $excel_cell->value;
 
 #To close all instances of excel:
 //$Workbook->Close;
-//unset($Worksheet);
-//unset($Workbook);
+unset($Worksheet);
+unset($Workbook);
 //$excel_app->Workbooks->Close();
 //$excel_app->Quit();
-//unset($excel_app);
+unset($excel_app);
 
 //problem bad gateway 502
 //ogarnac xamppa/wampa (usunac albo cos)

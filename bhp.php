@@ -39,8 +39,9 @@
         <div><a href="vs4.php" class="w3-bar-item w3-button w3-aqua w3-left-align w3-center w3-xlarge">VS4</a></div>
         <div><a href="vs5.php" class="w3-bar-item w3-button w3-orange w3-left-align w3-center w3-xlarge">VS5</a></div>
         <a href="vs9.php" class="w3-bar-item w3-button w3-teal w3-left-align w3-center w3-xlarge">VS9</a>
-        <a href="bhp.php" class="w3-bar-item w3-button w3-light-green w3-left-align w3-center w3-xlarge">BHP</a>
+        <a href="bhp.php" class="w3-bar-item w3-button w3-light-green w3-left-align w3-center w3-xlarge">> BHP <</a>
         <a href="quality.php" class="w3-bar-item w3-button w3-dark-gray w3-left-align w3-center w3-xlarge">QUALITY</a>
+        <div id="refresh"><a href="bhp.php"><i class="fa fa-refresh w3-xxxlarge"></i></a></div>
     </div>
 </div>
 
@@ -50,7 +51,7 @@
         <div id="naglowki"><h1 id="topTitle" style="text-align: center">Key Performance Indicators Parker Hannifin
                 Manufacturing Sp. z o. o. Siechnice</h1>
             <hr>
-            <h2 style="text-align: center">Dzisiejsza data to: <span id="date"></span></h2>
+            <h2 style="text-align: center"><span id="date"></span></h2>
             <!--<h2 style="text-align: center">Poprzedni dzień roboczy: <span id="dzienRoboczy"></span></h2>-->
             <hr>
             <div class="charts">
@@ -59,6 +60,37 @@
                 <!--                <canvas id="cvs" width="300" height="300"></canvas>-->
                 <div id="chartContainer" style="height: 300px;width: 50%">
                     <h6>BHP content</h6>
+                    <p id="demo"></p>
+                    <script type="text/javascript">
+                        // Set the date we're counting down to
+                        var countDownDate = new Date();
+                        document.write(countDownDate);
+                        // Update the count down every 1 second
+                        var x = setInterval(function() {
+
+                        // Get todays date and time
+                        var now = new Date().getTime();
+
+                        // Find the distance between now an the count down date
+                        var distance = countDownDate.getTime() + now;
+
+                        // Time calculations for days, hours, minutes and seconds
+                        var days = Math.floor(distance / (1000 * 60 * 60 * 24));
+                        var hours = Math.floor((distance % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60));
+                        var minutes = Math.floor((distance % (1000 * 60 * 60)) / (1000 * 60));
+                        var seconds = Math.floor((distance % (1000 * 60)) / 1000);
+
+                        // Output the result in an element with id="demo"
+                        document.getElementById("demo").innerHTML = days + "d " + hours + "h "
+                        + minutes + "m " + seconds + "s ";
+
+                        // If the count down is over, write some text
+                        if (distance < 0) {
+                        clearInterval(x);
+                        document.getElementById("demo").innerHTML = "EXPIRED";
+                        }
+                        }, 1000);
+                    </script>
                 </div>
             </div>
         </div>

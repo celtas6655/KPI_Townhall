@@ -1,4 +1,5 @@
 <!DOCTYPE html>
+<?php require 'excCon.php';?>
 <!--dane do wykresow moga byc w osobnych plikach albo tutaj-->
 <!--ale trzeba uwazac na dataPoints w kategorii data-->
 
@@ -54,7 +55,7 @@
 <!-- Sidebar -->
 <div class="w3-sidebar w3-black w3-bar-block" style="width:15%">
     <a href="index.php"><img src="img/logoITSiechnice.png" height="109" width="288"/></a>
-    <a href="index.php"><h3 class="w3-bar-item w3-center"><i class="fa fa-home"> Home</i></h3></a>
+    <a href="index.php"><h3 class="w3-bar-item w3-center"><i class="fa fa-home"> >Home<</i></h3></a>
     <div class="w3-sidebar w3-bar-block w3-black" style="width: 15%">
         <div><a href="vs1.php" class="w3-bar-item w3-button w3-blue w3-left-align w3-center w3-xlarge">VS1</a></div>
         <div><a href="vs2.php" class="w3-bar-item w3-button w3-green w3-left-align w3-center w3-xlarge">VS2</a></div>
@@ -64,6 +65,7 @@
         <a href="vs9.php" class="w3-bar-item w3-button w3-black w3-left-align w3-center w3-xlarge">VS9</a>
         <a href="bhp.php" class="w3-bar-item w3-button w3-light-green w3-left-align w3-center w3-xlarge">BHP</a>
         <a href="quality.php" class="w3-bar-item w3-button w3-dark-gray w3-left-align w3-center w3-xlarge">QUALITY</a>
+        <div id="refresh"><a href="index.php"><i class="fa fa-refresh w3-xxxlarge"></i></a></div>
     </div>
 </div>
 
@@ -73,7 +75,7 @@
         <div id="naglowki"><h1 id="topTitle" style="text-align: center">Key Performance Indicators Parker Hannifin
                 Manufacturing Sp. z o. o. Siechnice</h1>
             <hr>
-            <h2 style="text-align: center">Dzisiejsza data to: <span id="date"></span></h2>
+            <h2 style="text-align: center"><span id="date"></span></h2>
             <!--<h2 style="text-align: center">Poprzedni dzień roboczy: <span id="dzienRoboczy"></span></h2>-->
             <hr>
             <div class="charts" style="height: 800px;width: 80%;">
@@ -85,7 +87,7 @@
                         $(function () {
                             var chart1 = new CanvasJS.Chart("chartContainer1",
                                 {
-                                    <?php require 'chart1.php';?>
+<!--                                    --><?php //require 'chart1.php';?>
                                 theme: "theme2",
                                 animationEnabled: true,
                                 title: {
@@ -111,7 +113,7 @@
                         $(function () {
                             var chart2 = new CanvasJS.Chart("chartContainer2",
                                 {
-                                    <?php require 'chart2.php';?>
+<!--                                    --><?php //require 'chart2.php';?>
                                     theme: "theme2",
                                     title:{
                                         text: "Wszystkie działy (ilość wyprodukowana)"
