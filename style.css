@@ -76,3 +76,21 @@ img{
     align-items: center;
     justify-content: center;
 }
+
+#refresh {
+    /*width: 100%;*/
+    margin-top: 130px;
+    margin-left: 85px;
+    margin-right: 85px;
+
+    border-radius: 50%;
+    -webkit-transition: -webkit-transform .8s ease-in-out;
+    transition:         transform .8s ease-in-out;
+}
+
+#refresh:hover{
+    /*color: gray;*/
+
+    -webkit-transform: rotate(360deg);
+    transform: rotate(360deg);
+}
