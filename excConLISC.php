@@ -158,9 +158,9 @@ $dataPointt = array(
 );
 
 #To close all instances of excel:
-$Workbook->Close;
+//$Workbook->Close;
 unset($Worksheet);
 unset($Workbook);
-$excel_app->Workbooks->Close();
-$excel_app->Quit();
+//$excel_app->Workbooks->Close();
+//$excel_app->Quit();
 unset($excel_app);
