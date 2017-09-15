@@ -78,10 +78,12 @@ img{
 }
 
 #refresh {
-    /*width: 100%;*/
-    margin-top: 130px;
-    margin-left: 85px;
-    margin-right: 85px;
+    /*max-width: 210px;*/
+    width: 210px;
+    /*margin-top: 130px;*/
+    /*margin-left: 85px;*/
+    /*margin-right: 85px;*/
+    margin: auto;
 
     border-radius: 50%;
     -webkit-transition: -webkit-transform .8s ease-in-out;

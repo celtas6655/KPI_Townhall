@@ -13,6 +13,7 @@
     <script type="text/javascript" src="charts.js"></script>
     <script type="text/javascript" src="init.js"></script>
     <script type="text/javascript" src="https://www.gstatic.com/charts/loader.js"></script>
+    <script type="text/javascript" src="timerUp.js"></script>
 
     <script src="RGraph/libraries/RGraph.common.sheets.js"></script>
     <script src="RGraph/libraries/RGraph.common.key.js"></script>
@@ -59,36 +60,58 @@
                 <!--                <div id="chart_div"></div>-->
                 <!--                <canvas id="cvs" width="300" height="300"></canvas>-->
                 <div id="chartContainer" style="height: 300px;width: 50%">
-                    <div class="counter"><h6>Dni bez wypadku(test): </h6>
-                    <h3 id="demo"></h3>
-<!--                        dodac buttona z resetem "countDownDate = new Date(); localStorage.setItem('startDate', countDownDate);" -->
-                    <script type="text/javascript">
-                        var countDownDate = localStorage.getItem('startDate');
-                        if (countDownDate) {
-                            countDownDate = new Date(countDownDate);
-                        } else {
-                            countDownDate = new Date();
-                            localStorage.setItem('startDate', countDownDate);
-                        }
-                        // Update the count down every 1 second
-                        var x = setInterval(function() {
+                    <div class="counter"><h3>Dni bez wypadku(test): </h3>
+                    <h1 id="demo"></h1>
+                        <form>
+                            <label for="password"><input type="password" name="password" size="15" id="password" onkeyup="activateBtn()" /></label>
+<!--                            <input type="submit" id='delete' class='delete' disabled name="delete" value='Reset' onclick="resetFunc()" />-->
+                        </form>
 
-                            // Get todays date and time
-                            var now = new Date().getTime();
+                        <script type="text/javascript">
+                            function activateBtn() {
+                               pass = document.getElementById('password').value;
+                                if (pass == "1917"){
+//                                    document.getElementById('password').onkeyup = function(){
+//                                        document.getElementById('delete').disabled = false;
+                                    countDownDate = new Date(); localStorage.setItem('startDate', countDownDate);
+                                    window.location.href = "bhp.php";
 
-                            // Find the distance between now an the count down date
-                            var distance = now - countDownDate.getTime();
-
-                            // Time calculations for days, hours, minutes and seconds
-                            var days = Math.floor(distance / (1000 * 60 * 60 * 24));
-                            var hours = Math.floor((distance % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60));
-                            var minutes = Math.floor((distance % (1000 * 60 * 60)) / (1000 * 60));
-                            var seconds = Math.floor((distance % (1000 * 60)) / 1000);
-
-                            // Output the result in an element with id="demo"
-                            document.getElementById("demo").innerHTML = days + "d " + hours + "h " + minutes + "m " + seconds + "s ";
-                        }, 1000);
-                    </script>
+                            }}
+                        </script>
+<!--                        <script type="text/javascript">-->
+<!--                            function resetFunc(){-->
+<!--                                countDownDate = new Date(); localStorage.setItem('startDate', countDownDate);-->
+<!--                            }-->
+<!--                        </script>-->
+<!--                    <script type="text/javascript">-->
+<!---->
+<!--                        countDownDate = new Date(); localStorage.setItem('startDate', countDownDate);-->
+<!--                        var countDownDate = localStorage.getItem('startDate');-->
+<!--                        if (countDownDate) {-->
+<!--                            countDownDate = new Date(countDownDate);-->
+<!--                        } else {-->
+<!--                            countDownDate = new Date();-->
+<!--                            localStorage.setItem('startDate', countDownDate);-->
+<!--                        }-->
+<!--                        // Update the count down every 1 second-->
+<!--                        var x = setInterval(function() {-->
+<!---->
+<!--                            // Get todays date and time-->
+<!--                            var now = new Date().getTime();-->
+<!---->
+<!--                            // Find the distance between now an the count down date-->
+<!--                            var distance = now - countDownDate.getTime();-->
+<!---->
+<!--                            // Time calculations for days, hours, minutes and seconds-->
+<!--                            var days = Math.floor(distance / (1000 * 60 * 60 * 24));-->
+<!--                            var hours = Math.floor((distance % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60));-->
+<!--                            var minutes = Math.floor((distance % (1000 * 60 * 60)) / (1000 * 60));-->
+<!--                            var seconds = Math.floor((distance % (1000 * 60)) / 1000);-->
+<!---->
+<!--                            // Output the result in an element with id="demo"-->
+<!--                            document.getElementById("demo").innerHTML = days + "d " + hours + "h " + minutes + "m " + seconds + "s ";-->
+<!--                        }, 1000);-->
+<!--                    </script>-->
                     </div>
                 </div>
             </div>
