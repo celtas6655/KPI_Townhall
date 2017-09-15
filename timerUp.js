@@ -1,4 +1,3 @@
-countDownDate = new Date(); localStorage.setItem('startDate', countDownDate);
 var countDownDate = localStorage.getItem('startDate');
 if (countDownDate) {
     countDownDate = new Date(countDownDate);
