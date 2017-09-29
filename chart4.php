@@ -1,5 +1,5 @@
 <?php
-require 'excConLISC.php';
+require_once 'excConLISC.php';
 $dataPoi = array(
     array("y" => $excel_result10, "label" => "Wczoraj"),
     array("y" => $excel_result11, "label" => "Dzisiaj"),

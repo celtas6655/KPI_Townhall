@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<?php require 'conv2.php';?>
+<?php require_once 'conv2.php';?>
 <!--dane do wykresow moga byc w osobnych plikach albo tutaj-->
 <!--ale trzeba uwazac na dataPoints w kategorii data-->
 
@@ -37,16 +37,21 @@
     <script type="text/javascript" src="init.js"></script>
     <script type="text/javascript" src="https://www.gstatic.com/charts/loader.js"></script>
 
-    <script src="RGraph/libraries/RGraph.common.sheets.js"></script>
-    <script src="RGraph/libraries/RGraph.common.key.js"></script>
-    <script src="RGraph/libraries/RGraph.common.sheets.js"></script>
-    <script src="RGraph/libraries/RGraph.common.core.js"></script>
-    <script src="RGraph/libraries/RGraph.bar.js"></script>
-    <script src="RGraph/libraries/RGraph.gauge.js"></script>
+    <!-- <script src="RGraph/libraries/RGraph.common.sheets.js"></script> -->
+    <!-- <script src="RGraph/libraries/RGraph.common.key.js"></script> -->
+    <!-- <script src="RGraph/libraries/RGraph.common.sheets.js"></script> -->
+    <!-- <script src="RGraph/libraries/RGraph.common.core.js"></script> -->
+    <!-- <script src="RGraph/libraries/RGraph.bar.js"></script> -->
+    <!-- <script src="RGraph/libraries/RGraph.gauge.js"></script> -->
     <!--    <script src="canvasjs.min.js"></script>-->
     <!--    <script src="jquery.canvasjs.min.js"></script>-->
     <script src="https://code.jquery.com/jquery-1.12.4.min.js"></script>
-    <script src="https://canvasjs.com/assets/script/canvasjs.min.js"></script>
+    <script src="https://canvasjs.com/assets/script/canvasjs.min.js"></script><link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+    <!-- jQuery library -->
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+
+<!-- Latest compiled JavaScript -->
+<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
 
 </head>
 
@@ -90,7 +95,7 @@
                                     theme: "theme2",
                                     animationEnabled: true,
                                     title: {
-                                        text: "LISC [%]"
+                                        text: "LISC [%] <?php echo $strzalka; ?>"
                                     },
                                     axisY:{
                                         maximum: 100,
@@ -130,7 +135,7 @@
                                     theme: "theme2",
                                     animationEnabled: true,
                                     title: {
-                                        text: "MISSER [ppt]"
+                                        text: "MISSER [ppt] <?php echo $strzalka_dol; ?>"
                                     },
                                     axisY:{
                                         stripLines:[
@@ -168,7 +173,7 @@
                                     theme: "theme2",
                                     animationEnabled: true,
                                     title: {
-                                        text: "Najstarsze zamówienie [dni]"
+                                        text: "Najstarsze zamówienie [dni] <?php echo $strzalka_dol; ?>"
                                     },
                                     axisY:{
                                         stripLines:[
@@ -206,7 +211,7 @@
                                     theme: "theme2",
                                     animationEnabled: true,
                                     title: {
-                                        text: "LB [dni]"
+                                        text: "LB [dni] <?php echo $strzalka_dol; ?>"
                                     },
                                     axisY:{
                                         stripLines:[
@@ -245,7 +250,7 @@
                                     theme: "theme2",
                                     animationEnabled: true,
                                     title: {
-                                        text: "Opóźnione linie"
+                                        text: "Opóźnione linie <?php echo $strzalka_dol; ?>"
                                     },
                                     axisY:{
                                         stripLines:[

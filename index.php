@@ -1,5 +1,6 @@
 <!DOCTYPE html>
-<?php require 'excCon.php';?>
+
+<?php require_once 'convMain.php';?>
 <!--dane do wykresow moga byc w osobnych plikach albo tutaj-->
 <!--ale trzeba uwazac na dataPoints w kategorii data-->
 
@@ -37,16 +38,22 @@
     <script type="text/javascript" src="init.js"></script>
     <script type="text/javascript" src="https://www.gstatic.com/charts/loader.js"></script>
 
-    <script src="RGraph/libraries/RGraph.common.sheets.js"></script>
+    <!-- <script src="RGraph/libraries/RGraph.common.sheets.js"></script>
     <script src="RGraph/libraries/RGraph.common.key.js"></script>
     <script src="RGraph/libraries/RGraph.common.sheets.js"></script>
     <script src="RGraph/libraries/RGraph.common.core.js"></script>
     <script src="RGraph/libraries/RGraph.bar.js"></script>
-    <script src="RGraph/libraries/RGraph.gauge.js"></script>
+    <script src="RGraph/libraries/RGraph.gauge.js"></script> -->
 <!--    <script src="canvasjs.min.js"></script>-->
 <!--    <script src="jquery.canvasjs.min.js"></script>-->
     <script src="https://code.jquery.com/jquery-1.12.4.min.js"></script>
     <script src="https://canvasjs.com/assets/script/canvasjs.min.js"></script>
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+    <!-- jQuery library -->
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+
+<!-- Latest compiled JavaScript -->
+<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
 
 </head>
 
@@ -78,61 +85,207 @@
             <h2 style="text-align: center"><span id="date"></span></h2>
             <!--<h2 style="text-align: center">Poprzedni dzień roboczy: <span id="dzienRoboczy"></span></h2>-->
             <hr>
-            <div class="charts" style="height: 800px;width: 80%;">
-                <!--                <div id="piechart"></div>-->
-                <!--                <div id="chart_div"></div>-->
-                <!--                <canvas id="cvs" width="300" height="300"></canvas>-->
-                <div id="chartContainer1"  style="height: 400px;width: 50%;">
-                    <script type="text/javascript">
-                        $(function () {
-                            var chart1 = new CanvasJS.Chart("chartContainer1",
-                                {
-<!--                                    --><?php //require 'chart1.php';?>
-                                theme: "theme2",
-                                animationEnabled: true,
-                                title: {
-                                    text: "Suma VS1"
-                                },
-                                data: [
+                <div class="charts" style="height: 800px;width: 100%;">
+                    <!--                <div id="piechart"></div>-->
+                    <!--                <div id="chart_div"></div>-->
+                    <!--                <canvas id="cvs" width="300" height="300"></canvas>-->
+                    <div class="czarcik" id="chartContainer1"  style="height: 400px;width: 50%;">
+                        <script type="text/javascript">
+                            $(function () {
+                                var chart1 = new CanvasJS.Chart("chartContainer1",
                                     {
-                                        indexLabel: "{y}",
-                                        indexLabelPlacement: "outside",
-                                        indexLabelOrientation: "horizontal",
-                                        indexLabelFontColor: "black",
-                                        type: "column",
-                                        dataPoints: <?php echo json_encode($dataPoints, JSON_NUMERIC_CHECK); ?>
-                                    }
-                            ]
+                                        theme: "theme2",
+                                        animationEnabled: true,
+                                        title: {
+                                            text: "LISC [%] <?php echo $strzalka; ?>"
+                                        },
+                                        axisY:{
+                                            maximum: 100,
+                                            interval: 20,
+                                            stripLines:[
+                                                {
+                                                    value: <?php echo json_encode($excel_result9*100, JSON_NUMERIC_CHECK); ?>,
+                                                    lineDashType: "dot",
+                                                    label: "Cel: <?php echo json_encode($excel_result9*100, JSON_NUMERIC_CHECK); ?>%",//zmieniac auto cel<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<
+                                                    showOnTop: false,
+                                                    thickness: 5,
+                                                    labelPlacement: "outside"
+                                                }
+                                            ]
+                                        },
+        //                                    axisY2:{
+        //                                        title: "⇐",
+        //                                        interlacedColor: "#F8F1E4"
+        //                                    },
+                                        data: [
+                                            {
+                                                indexLabel: "{y}",
+                                                indexLabelPlacement: "outside",
+                                                indexLabelOrientation: "horizontal",
+                                                indexLabelFontColor: "black",
+                                                indexLabelFontSize: 24,
+                                                type: "column",
+                                                dataPoints: <?php echo json_encode($dataPo, JSON_NUMERIC_CHECK); ?>, enableArrow: true
+                                            }
+                                        ]
+                                    });
+                                chart1.render();
                             });
-                            chart1.render();
-                        });
-                    </script>
-                </div>
-                <div id="chartContainer2" style="height: 400px;width: 50%">
-                    <script type="text/javascript">
-                        $(function () {
-                            var chart2 = new CanvasJS.Chart("chartContainer2",
-                                {
-<!--                                    --><?php //require 'chart2.php';?>
-                                    theme: "theme2",
-                                    title:{
-                                        text: "Wszystkie działy (ilość wyprodukowana)"
-                                    },
-                                    exportFileName: "Dzialy",
-                                    exportEnabled: false,
-                                    animationEnabled: false,
-                                    data: [
-                                        {
-                                            type: "pie",
-                                            showInLegend: true,
-                                            toolTipContent: "{name}: <strong>{y}</strong>",
-                                            indexLabel: "{name} {y}",
-                                            dataPoints: <?php echo json_encode($dataP, JSON_NUMERIC_CHECK); ?>
-                                        }]
-                                });
-                            chart2.render();
-                        });
-                    </script>
+                        </script>
+                    </div>
+                    <div class="czarcik" id="chartContainer2" style="height: 400px;width: 50%">
+                        <script type="text/javascript">
+                            $(function () {
+                                var chart2 = new CanvasJS.Chart("chartContainer2",
+                                    {
+                                        theme: "theme2",
+                                        animationEnabled: true,
+                                        title: {
+                                            text: "MISSER [ppt] <?php echo $strzalka_dol; ?>"
+                                        },
+                                        axisY:{
+                                            stripLines:[
+                                                {
+                                                    value: <?php echo json_encode($excel_result12, JSON_NUMERIC_CHECK); ?>,
+                                                    lineDashType: "dot",
+                                                    label: "Cel: <?php echo json_encode($excel_result12, JSON_NUMERIC_CHECK); ?>ppt",
+                                                    showOnTop: false,
+                                                    thickness: 5,
+                                                    labelPlacement: "outside"
+                                                }
+                                            ]
+                                        },
+                                        data: [
+                                            {
+                                                indexLabel: "{y}",
+                                                indexLabelPlacement: "outside",
+                                                indexLabelOrientation: "horizontal",
+                                                indexLabelFontColor: "black",
+                                                indexLabelFontSize: 24,
+                                                type: "column",
+                                                dataPoints: <?php echo json_encode($dataPoi, JSON_NUMERIC_CHECK); ?>
+                                            }
+                                        ]
+                                    });
+                                chart2.render();
+                            });
+                        </script>
+                    </div>
+                    <div class="czarcik" id="chartContainer3" style="height: 400px;width: 50%">
+                        <script type="text/javascript">
+                            $(function () {
+                                var chart3 = new CanvasJS.Chart("chartContainer3",
+                                    {
+                                        theme: "theme2",
+                                        animationEnabled: true,
+                                        title: {
+                                            text: "Najstarsze zamówienie [dni] <?php echo $strzalka_dol; ?>"
+                                        },
+                                        axisY:{
+                                            stripLines:[
+                                                {
+                                                    value: <?php echo json_encode($excel_result15, JSON_NUMERIC_CHECK); ?>,
+                                                    lineDashType: "dot",
+                                                    label: "Cel: <?php echo json_encode($excel_result15, JSON_NUMERIC_CHECK); ?>",
+                                                    showOnTop: false,
+                                                    thickness: 5,
+                                                    labelPlacement: "outside"
+                                                }
+                                            ]
+                                        },
+                                        data: [
+                                            {
+                                                indexLabel: "{y}",
+                                                indexLabelPlacement: "outside",
+                                                indexLabelOrientation: "horizontal",
+                                                indexLabelFontColor: "black",
+                                                indexLabelFontSize: 24,
+                                                type: "column",
+                                                dataPoints: <?php echo json_encode($dataPoin, JSON_NUMERIC_CHECK); ?>
+                                            }
+                                        ]
+                                    });
+                                chart3.render();
+                            });
+                        </script>
+                    </div>
+                    <div class="czarcik" id="chartContainer4" style="height: 400px;width: 50%">
+                        <script type="text/javascript">
+                            $(function () {
+                                var chart4 = new CanvasJS.Chart("chartContainer4",
+                                    {
+                                        theme: "theme2",
+                                        animationEnabled: true,
+                                        title: {
+                                            text: "LB [dni] <?php echo $strzalka_dol; ?>"
+                                        },
+                                        axisY:{
+                                            stripLines:[
+                                                {
+                                                    value: <?php echo json_encode($excel_result18, JSON_NUMERIC_CHECK); ?>,
+                                                    lineDashType: "dot",
+                                                    label: "Cel: <?php echo json_encode($excel_result18, JSON_NUMERIC_CHECK); ?>",
+                                                    showOnTop: false,
+                                                    thickness: 5,
+                                                    labelPlacement: "outside"
+                                                }
+                                            ]
+                                        },
+                                        data: [
+                                            {
+                                                indexLabel: "{y}",
+                                                indexLabelPlacement: "outside",
+                                                indexLabelOrientation: "horizontal",
+                                                indexLabelFontColor: "black",
+                                                indexLabelFontSize: 24,
+                                                type: "column",
+                                                dataPoints: <?php echo json_encode($dataPoint, JSON_NUMERIC_CHECK); ?>
+                                            }
+                                        ]
+                                    });
+                                chart4.render();
+                            });
+                        </script>
+                    </div>
+                    <div class="czarcik" id="chartContainer5" style="height: 400px;width: 50%">
+                        <script type="text/javascript">
+                            $(function () {
+                                var chart5 = new CanvasJS.Chart("chartContainer5",
+                                    {
+
+                                        theme: "theme2",
+                                        animationEnabled: true,
+                                        title: {
+                                            text: "Opóźnione linie <?php echo $strzalka_dol; ?>"
+                                        },
+                                        axisY:{
+                                            stripLines:[
+                                                {
+                                                    value: <?php echo json_encode($excel_result21, JSON_NUMERIC_CHECK); ?>,
+                                                    lineDashType: "dot",
+                                                    label: "Cel: <?php echo json_encode($excel_result21, JSON_NUMERIC_CHECK); ?>",
+                                                    showOnTop: false,
+                                                    thickness: 5,
+                                                    labelPlacement: "outside"
+                                                }
+                                            ]
+                                        },
+                                        data: [
+                                            {
+                                                indexLabel: "{y}",
+                                                indexLabelPlacement: "outside",
+                                                indexLabelOrientation: "horizontal",
+                                                indexLabelFontColor: "black",
+                                                indexLabelFontSize: 24,
+                                                type: "column",
+                                                dataPoints: <?php echo json_encode($dataPointt, JSON_NUMERIC_CHECK); ?>
+                                            }
+                                        ]
+                                    });
+                                chart5.render();
+                            });
+                        </script>
+                    </div>
                 </div>
             </div>
         </div>

@@ -1,80 +1,84 @@
 <?php
-$filename = "P:\\Plan_Zak_Log\\Planowanie\\SERWIS\\dane na spotkanie.xlsx";
-$sheet1 = "Arkusz3";
-$excel_app = new COM("Excel.application") or Die ("Did not connect");
-$Workbook = $excel_app->Workbooks->Open("$filename") or Die("Did not open $filename $Workbook");
-$Worksheet = $Workbook->Worksheets($sheet1);
+include "PHPExcel-1.8\Classes\PHPExcel\IOFactory.php";
+// include "PhpSpreadsheet\src\PhpSpreadsheet\IOFactory.php";
 
-$Worksheet->activate;
-$excel_cell = $Worksheet->Range("K6");
-$excel_cell->activate;
-$excel_result9 = $excel_cell->value;
-//print "$excel_result7\n";
-$Worksheet->activate;
-$excel_cell = $Worksheet->Range("L6");
-$excel_cell->activate;
-$excel_result7 = $excel_cell->value;
-//print "$excel_result8\n";
-$excel_cell = $Worksheet->Range("M6");
-$excel_cell->activate;
-$excel_result8 = $excel_cell->value;
-//print "$excel_result8\n";
-$Worksheet->activate;
-$excel_cell = $Worksheet->Range("K7");
-$excel_cell->activate;
-$excel_result12 = $excel_cell->value;
-//print "$excel_result7\n";
-$Worksheet->activate;
-$excel_cell = $Worksheet->Range("L7");
-$excel_cell->activate;
-$excel_result10 = $excel_cell->value;
-//print "$excel_result8\n";
-$excel_cell = $Worksheet->Range("M7");
-$excel_cell->activate;
-$excel_result11 = $excel_cell->value;
-//print "$excel_result8\n";
-$Worksheet->activate;
-$excel_cell = $Worksheet->Range("K8");
-$excel_cell->activate;
-$excel_result15 = $excel_cell->value;
-//print "$excel_result7\n";
-$Worksheet->activate;
-$excel_cell = $Worksheet->Range("L8");
-$excel_cell->activate;
-$excel_result13 = $excel_cell->value;
-//print "$excel_result8\n";
-$excel_cell = $Worksheet->Range("M8");
-$excel_cell->activate;
-$excel_result14 = $excel_cell->value;
-//print "$excel_result8\n";
-$Worksheet->activate;
-$excel_cell = $Worksheet->Range("K9");
-$excel_cell->activate;
-$excel_result18 = $excel_cell->value;
-//print "$excel_result7\n";
-$Worksheet->activate;
-$excel_cell = $Worksheet->Range("L9");
-$excel_cell->activate;
-$excel_result16 = $excel_cell->value;
-//print "$excel_result8\n";
-$excel_cell = $Worksheet->Range("M9");
-$excel_cell->activate;
-$excel_result17 = $excel_cell->value;
-//print "$excel_result8\n";
-$Worksheet->activate;
-$excel_cell = $Worksheet->Range("K10");
-$excel_cell->activate;
-$excel_result21 = $excel_cell->value;
-//print "$excel_result7\n";
-$Worksheet->activate;
-$excel_cell = $Worksheet->Range("L10");
-$excel_cell->activate;
-$excel_result19 = $excel_cell->value;
-//print "$excel_result8\n";
-$excel_cell = $Worksheet->Range("M10");
-$excel_cell->activate;
-$excel_result20 = $excel_cell->value;
-//print "$excel_result8\n";
+// $inputFileName = 'C:\Users\tfd054it0154\Desktop\dane na spotkanie.xlsx';
+$inputFileName = 'P:\Plan_Zak_Log\Planowanie\SERWIS\dane na spotkanie.xlsx';
+// $inputFileName = 'C:\Users\tfd054it0154\Desktop\test2.xlsx';
+// $spreadsheet = \PhpOffice\PhpSpreadsheet\IOFactory::load($inputFileName);
+
+//  Read your Excel workbook
+try {
+    $inputFileType = PHPExcel_IOFactory::identify($inputFileName);
+    $objReader = PHPExcel_IOFactory::createReader($inputFileType);
+    $objPHPExcel = $objReader->load($inputFileName);
+} catch(Exception $e) {
+    die('Error loading file "'.pathinfo($inputFileName,PATHINFO_BASENAME).'": '.$e->getMessage());
+}
+
+require_once "PHPExcel-1.8/Classes/PHPExcel.php";
+
+// $fileLocation = "C:/Users/tfd054it0154/Desktop/" . $fileName;
+// $objReader = PHPExcel_IOFactory::createReaderForFile($fileName); 
+// if( !file_exists( $fileLocation ) ) die( 'File could not be found at: ' . $fileLocation );
+// $data = new Spreadsheet_Excel_Reader( $fileLocation, false ); 
+
+
+// $tmpfname = "dane na spotkanie.xlsx";
+// echo getcwd() . "\n";
+// if (is_readable($tmpfname)) {
+//     echo 'The file is readable';
+// } else {
+//     echo 'The file is not readable';
+// }
+// $excelReader = PHPExcel_IOFactory::createReaderForFile($tmpfname);
+// $excelObj = $excelReader->load($tmpfname);
+// $worksheet = $excelObj->getSheet(0);
+// ---------------------------------------------------------------------------------
+$excel_result9 = $objPHPExcel->getActiveSheet()->getCell('K6')->getValue();
+// echo $excel_result9;
+// echo " ";
+$excel_result7 = $objPHPExcel->getActiveSheet()->getCell('L6')->getOldCalculatedValue();
+// echo $excel_result7;    
+// echo " ";
+$excel_result8 = $objPHPExcel->getActiveSheet()->getCell('M6')->getOldCalculatedValue();
+// echo $excel_result8;    
+// echo " ";
+$excel_result12 = $objPHPExcel->getActiveSheet()->getCell('K7')->getValue();
+// echo $excel_result12;    
+// echo " ";
+$excel_result10 = $objPHPExcel->getActiveSheet()->getCell('L7')->getOldCalculatedValue();
+// echo $excel_result10;    
+// echo " ";
+$excel_result11 = $objPHPExcel->getActiveSheet()->getCell('M7')->getOldCalculatedValue();
+// echo $excel_result11;    
+// echo " ";
+$excel_result15 = $objPHPExcel->getActiveSheet()->getCell('K8')->getValue();
+// echo $excel_result15;    
+// echo " ";
+$excel_result13 = $objPHPExcel->getActiveSheet()->getCell('L8')->getOldCalculatedValue();
+// echo $excel_result13;    
+// echo " ";
+$excel_result14 = $objPHPExcel->getActiveSheet()->getCell('M8')->getOldCalculatedValue();
+// echo $excel_result14;    
+// echo " ";
+$excel_result18 = $objPHPExcel->getActiveSheet()->getCell('K9')->getValue();
+// echo $excel_result18;    
+// echo " ";
+$excel_result16 = $objPHPExcel->getActiveSheet()->getCell('L9')->getOldCalculatedValue();
+// echo $excel_result16;    
+// echo " ";
+$excel_result17 = $objPHPExcel->getActiveSheet()->getCell('M9')->getOldCalculatedValue();
+// echo $excel_result17;    
+// echo " ";
+$excel_result21 = $objPHPExcel->getActiveSheet()->getCell('K10')->getValue();
+// echo $excel_result21;    
+// echo " ";
+$excel_result19 = $objPHPExcel->getActiveSheet()->getCell('L10')->getOldCalculatedValue();
+// echo $excel_result19;    
+// echo " ";
+$excel_result20 = $objPHPExcel->getActiveSheet()->getCell('M10')->getOldCalculatedValue();
+// echo $excel_result20;    
 
 if ($excel_result7 > $excel_result9) {
     $color = "green";
@@ -157,10 +161,7 @@ $dataPointt = array(
     array("y" => $excel_result20,"color" => $color9, "label" => "Dzisiaj"),
 );
 
-#To close all instances of excel:
-//$Workbook->Close;
-unset($Worksheet);
-unset($Workbook);
-//$excel_app->Workbooks->Close();
-//$excel_app->Quit();
-unset($excel_app);
+$strzalka = "⬆";
+$strzalka_dol = "⬇";
+unset($objPHPExcel);
+unset($objReader);
