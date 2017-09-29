@@ -15,14 +15,20 @@
     <script type="text/javascript" src="https://www.gstatic.com/charts/loader.js"></script>
     <script type="text/javascript" src="timerUp.js"></script>
 
-    <script src="RGraph/libraries/RGraph.common.sheets.js"></script>
+    <!-- <script src="RGraph/libraries/RGraph.common.sheets.js"></script>
     <script src="RGraph/libraries/RGraph.common.key.js"></script>
     <script src="RGraph/libraries/RGraph.common.sheets.js"></script>
     <script src="RGraph/libraries/RGraph.common.core.js"></script>
     <script src="RGraph/libraries/RGraph.bar.js"></script>
-    <script src="RGraph/libraries/RGraph.gauge.js"></script>
+    <script src="RGraph/libraries/RGraph.gauge.js"></script> -->
     <script src="https://code.jquery.com/jquery-1.12.4.min.js"></script>
     <script src="https://canvasjs.com/assets/script/canvasjs.min.js"></script>
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+    <!-- jQuery library -->
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+
+<!-- Latest compiled JavaScript -->
+<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
 
 </head>
 
@@ -60,7 +66,7 @@
                 <!--                <div id="chart_div"></div>-->
                 <!--                <canvas id="cvs" width="300" height="300"></canvas>-->
                 <div id="chartContainer" style="height: 300px;width: 50%">
-                    <div class="counter"><h3>Dni bez wypadku(test): </h3>
+                    <div class="counter"><h3>Dni bez wypadku: </h3>
                     <h1 id="demo"></h1>
                         <form>
                             <label for="password"><input type="password" name="password" size="15" id="password" onkeyup="activateBtn()" /></label>
@@ -74,6 +80,7 @@
 //                                    document.getElementById('password').onkeyup = function(){
 //                                        document.getElementById('delete').disabled = false;
                                     countDownDate = new Date(); localStorage.setItem('startDate', countDownDate);
+                                    //jak (nie) wypadek BHP to countDownDate = new Date("Sep 20, 2017 11:00:00");!!!!!!!!!!!!!!!!!!!!!!!!!!!!!
                                     window.location.href = "bhp.php";
 
                             }}

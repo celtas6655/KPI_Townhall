@@ -1,5 +1,5 @@
 <?php
-require 'excCon.php';
+require_once 'excCon.php';
 $dataPoints = array(
     array("y" => $excel_result, "label" => "VS1"),
     array("y" => 4, "label" => "Dzienny plan produkcji"),

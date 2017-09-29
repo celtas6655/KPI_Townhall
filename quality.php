@@ -14,14 +14,20 @@
     <script type="text/javascript" src="init.js"></script>
     <script type="text/javascript" src="https://www.gstatic.com/charts/loader.js"></script>
 
-    <script src="RGraph/libraries/RGraph.common.sheets.js"></script>
+    <!-- <script src="RGraph/libraries/RGraph.common.sheets.js"></script>
     <script src="RGraph/libraries/RGraph.common.key.js"></script>
     <script src="RGraph/libraries/RGraph.common.sheets.js"></script>
     <script src="RGraph/libraries/RGraph.common.core.js"></script>
     <script src="RGraph/libraries/RGraph.bar.js"></script>
-    <script src="RGraph/libraries/RGraph.gauge.js"></script>
+    <script src="RGraph/libraries/RGraph.gauge.js"></script> -->
     <script src="https://code.jquery.com/jquery-1.12.4.min.js"></script>
     <script src="https://canvasjs.com/assets/script/canvasjs.min.js"></script>
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+    <!-- jQuery library -->
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+
+<!-- Latest compiled JavaScript -->
+<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
 
 </head>
 

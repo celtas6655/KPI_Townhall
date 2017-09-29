@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<?php require 'excConLISC.php';?>
+<?php require_once 'excConLISC.php';?>
 <!--dane do wykresow moga byc w osobnych plikach albo tutaj-->
 <!--ale trzeba uwazac na dataPoints w kategorii data-->
 
@@ -31,22 +31,30 @@
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
     <link rel="icon" type="img" href="favicon.ico"/>
+    <!-- <link rel="stylesheet" href="font-awesome\css\font-awesome.min.css"> -->
+    <!-- <link href="https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css" rel="stylesheet"/> -->
 
     <script type="text/javascript" src="scripts.js"></script>
     <script type="text/javascript" src="charts.js"></script>
     <script type="text/javascript" src="init.js"></script>
     <script type="text/javascript" src="https://www.gstatic.com/charts/loader.js"></script>
 
-    <script src="RGraph/libraries/RGraph.common.sheets.js"></script>
-    <script src="RGraph/libraries/RGraph.common.key.js"></script>
-    <script src="RGraph/libraries/RGraph.common.sheets.js"></script>
-    <script src="RGraph/libraries/RGraph.common.core.js"></script>
-    <script src="RGraph/libraries/RGraph.bar.js"></script>
-    <script src="RGraph/libraries/RGraph.gauge.js"></script>
+    <!-- <script src="RGraph/libraries/RGraph.common.sheets.js"></script> -->
+    <!-- <script src="RGraph/libraries/RGraph.common.key.js"></script> -->
+    <!-- <script src="RGraph/libraries/RGraph.common.sheets.js"></script> -->
+    <!-- <script src="RGraph/libraries/RGraph.common.core.js"></script> -->
+    <!-- <script src="RGraph/libraries/RGraph.bar.js"></script> -->
+    <!-- <script src="RGraph/libraries/RGraph.gauge.js"></script> -->
     <!--    <script src="canvasjs.min.js"></script>-->
     <!--    <script src="jquery.canvasjs.min.js"></script>-->
     <script src="https://code.jquery.com/jquery-1.12.4.min.js"></script>
     <script src="https://canvasjs.com/assets/script/canvasjs.min.js"></script>
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+    <!-- jQuery library -->
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+
+<!-- Latest compiled JavaScript -->
+<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
 
 </head>
 
@@ -56,15 +64,15 @@
 <div class="w3-sidebar w3-black w3-bar-block" style="width:15%">
     <a href="index.php"><img src="img/logoITSiechnice.png" height="109" width="288"/></a>
     <a href="index.php"><h3 class="w3-bar-item w3-center"><i class="fa fa-home"> Home</i></h3></a>
-    <div class="w3-sidebar w3-bar-block w3-black" style="width: 15%">
+    <div class="w3-sidebar w3-bar-block w3-black" style="width:15%"> <!-- samo width: 15% -->
         <div><a href="vs1.php" class="w3-bar-item w3-button w3-blue w3-left-align w3-center w3-xlarge">> VS1 <</a></div>
         <div><a href="vs2.php" class="w3-bar-item w3-button w3-green w3-left-align w3-center w3-xlarge">VS2</a></div>
         <div><a href="vs3.php" class="w3-bar-item w3-button w3-yellow w3-left-align w3-center w3-xlarge">VS3</a></div>
         <div><a href="vs4.php" class="w3-bar-item w3-button w3-purple w3-left-align w3-center w3-xlarge">VS4</a></div>
         <div><a href="vs5.php" class="w3-bar-item w3-button w3-gray w3-left-align w3-center w3-xlarge">VS5</a></div>
-        <a href="vs9.php" class="w3-bar-item w3-button w3-black w3-left-align w3-center w3-xlarge">VS9</a>
-        <a href="bhp.php" class="w3-bar-item w3-button w3-light-green w3-left-align w3-center w3-xlarge">BHP</a>
-        <a href="quality.php" class="w3-bar-item w3-button w3-dark-gray w3-left-align w3-center w3-xlarge">QUALITY</a>
+        <div><a href="vs9.php" class="w3-bar-item w3-button w3-black w3-left-align w3-center w3-xlarge">VS9</a></div>
+        <div><a href="bhp.php" class="w3-bar-item w3-button w3-light-green w3-left-align w3-center w3-xlarge">BHP</a></div>
+        <div><a href="quality.php" class="w3-bar-item w3-button w3-dark-gray w3-left-align w3-center w3-xlarge">QUALITY</a></div>
         <div id="refresh"><a href="vs1.php"><i class="fa fa-refresh w3-xxxlarge"></i></a></div>
     </div>
 </div>
@@ -90,7 +98,7 @@
                                     theme: "theme2",
                                     animationEnabled: true,
                                     title: {
-                                        text: "LISC [%]"
+                                        text: "LISC [%] <?php echo $strzalka; ?>"
                                     },
                                     axisY:{
                                         maximum: 100,
@@ -118,11 +126,11 @@
                                             indexLabelFontColor: "black",
                                             indexLabelFontSize: 24,
                                             type: "column",
-                                            dataPoints: <?php echo json_encode($dataPo, JSON_NUMERIC_CHECK); ?>
+                                            dataPoints: <?php echo json_encode($dataPo, JSON_NUMERIC_CHECK); ?>, enableArrow: true
                                         }
                                     ]
                                 });
-                            chart1.render();
+                            chart1.render();                      
                         });
                     </script>
                 </div>
@@ -134,7 +142,7 @@
                                     theme: "theme2",
                                     animationEnabled: true,
                                     title: {
-                                        text: "MISSER [ppt]"
+                                        text: "MISSER [ppt] <?php echo $strzalka_dol; ?>"
                                     },
                                     axisY:{
                                         stripLines:[
@@ -172,7 +180,7 @@
                                     theme: "theme2",
                                     animationEnabled: true,
                                     title: {
-                                        text: "Najstarsze zamówienie [dni]"
+                                        text: "Najstarsze zamówienie [dni] <?php echo $strzalka_dol; ?>"
                                     },
                                     axisY:{
                                         stripLines:[
@@ -210,7 +218,7 @@
                                     theme: "theme2",
                                     animationEnabled: true,
                                     title: {
-                                        text: "LB [dni]"
+                                        text: "LB [dni] <?php echo $strzalka_dol; ?>"
                                     },
                                     axisY:{
                                         stripLines:[
@@ -249,7 +257,7 @@
                                     theme: "theme2",
                                     animationEnabled: true,
                                     title: {
-                                        text: "Opóźnione linie"
+                                        text: "Opóźnione linie <?php echo $strzalka_dol; ?>"
                                     },
                                     axisY:{
                                         stripLines:[
