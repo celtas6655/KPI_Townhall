@@ -80,60 +80,60 @@ $excel_result19 = $objPHPExcel->getActiveSheet()->getCell('F18')->getOldCalculat
 $excel_result20 = $objPHPExcel->getActiveSheet()->getCell('G18')->getOldCalculatedValue();
 // echo $excel_result20;    
 
-if ($excel_result7 > $excel_result9) {
+if ($excel_result7 >= $excel_result9) {
     $color = "green";
 } else {
     $color = "red";
 }
 
-if ($excel_result8 > $excel_result9) {
+if ($excel_result8 >= $excel_result9) {
     $color1 = "green";
 } else {
     $color1 = "red";
 }
 
-if ($excel_result10 < $excel_result12) {
+if ($excel_result10 <= $excel_result12) {
     $color2 = "green";
 } else {
     $color2 = "red";
 }
-if ($excel_result11 < $excel_result12) {
+if ($excel_result11 <= $excel_result12) {
     $color3 = "green";
 } else {
     $color3 = "red";
 }
 
-if ($excel_result13 < $excel_result15) {
+if ($excel_result13 <= $excel_result15) {
     $color4 = "green";
 } else {
     $color4 = "red";
 }
 
-if ($excel_result14 < $excel_result15) {
+if ($excel_result14 <= $excel_result15) {
     $color5 = "green";
 } else {
     $color5 = "red";
 }
 
-if ($excel_result16 < $excel_result18) {
+if ($excel_result16 <= $excel_result18) {
     $color6 = "green";
 } else {
     $color6 = "red";
 }
 
-if ($excel_result17 < $excel_result18) {
+if ($excel_result17 <= $excel_result18) {
     $color7 = "green";
 } else {
     $color7 = "red";
 }
 
-if ($excel_result19 < $excel_result21) {
+if ($excel_result19 <= $excel_result21) {
     $color8 = "green";
 } else {
     $color8 = "red";
 }
 
-if ($excel_result20 < $excel_result21) {
+if ($excel_result20 <= $excel_result21) {
     $color9 = "green";
 } else {
     $color9 = "red";
